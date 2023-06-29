@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      h1 {
+        /* background-color: gray; */
+        border: 2px solid black;
+        transition: 1.5s;
+      }
+
+      h1:focus {
+        background-color: pink;
+      }
+
+      h1:hover {
+        /* background-color: skyblue; */
+      }
+
+      h1:active {
+        /* background-color: pink;
+        border: 2px solid red; */
+
+        /* padding: 20px; */
+        /* font-size: 50px;
+        text-align: center; */
+      }
+
+      button {
+      }
+
+      button:focus {
+        background-color: black;
+        color: white;
+      }
+
+      input {
+      }
+
+      input:focus {
+        background-color: gray;
+        color: white;
+      }
+
+      input:focus-visible {
+        outline: none;
+        /* border: 2px solid orange; */
+      }
+
+      .box{
+        margin-bottom: 50px;
+      }
+      .box:focus-within{
+        background-color: aqua;
+      }
+
+      .poe-box{
+        background-image: url(./assets/images/pattern.png);
+        background-size: 100px;
+      }
+
+      .poe{
+        opacity: 0.8;
+        /* display: none; */
+        /* visibility: hidden; */
+      }
+
+      .text-box{
+        width: 300px;
+        height: 300px;
+        overflow-y: scroll;
+        border: 5px solid black;
+        margin-bottom: 50px;
+      }
+      .float-box{
+        border: 5px solid black;
+        margin-bottom: 50px;
+      }
+      .boss-baby{
+        float: right;
+      }
+
+      .boss-text{
+        /* float: right; */
+      }
+
+      .boss-title{
+        float: left;
+      }
+
+      .aa-box{
+        width: 300px;
+        /* height: 100px; */
+        border: 3px solid black;
+        padding: 10px;
+        word-break: keep-all;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Min Ga Lar Par</h1>
+    <div class="box">
+
+        <p>hello form</p>
+      <button>Click Me One</button>
+      <button>Click Me Two</button>
+      <button>Click Me Three</button>
+      <br />
+      <br />
+      <input type="text" />
+      <input type="text" />
+    </div>
+    <div class="poe-box">
+        <img class="poe" width="200" src="./assets/images/poe-mamhe-thar-2.jpg" alt="">
+
+        <h2 style=" color: red;">Poe Lay</h2>
+    </div>
+    <div class="text-box">
+        <h1>San Kyi Tar</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque asperiores provident iure facilis ipsam voluptatem impedit perferendis eveniet, dolore itaque quibusdam? Optio, nemo earum. Nulla earum maxime incidunt aliquam atque.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque asperiores provident iure facilis ipsam voluptatem impedit perferendis eveniet, dolore itaque quibusdam? Optio, nemo earum. Nulla earum maxime incidunt aliquam atque.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque asperiores provident iure facilis ipsam voluptatem impedit perferendis eveniet, dolore itaque quibusdam? Optio, nemo earum. Nulla earum maxime incidunt aliquam atque.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque asperiores provident iure facilis ipsam voluptatem impedit perferendis eveniet, dolore itaque quibusdam? Optio, nemo earum. Nulla earum maxime incidunt aliquam atque.
+        </p>
+    </div> 
+
+    <div class="float-box">
+       <h2 class="boss-title">Boss Baby</h2>
+       <div style="clear: both;"></div>
+       <img width="100" class="boss-baby" src="./assets/images/The-Boss-Baby-PNG-High-Quality-Image.png" alt="">
+       <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut explicabo perferendis optio nulla error dolor temporibus 
+       </p>
+
+       <div style="clear: both;"></div>
+        
+    </div>
+
+    <div class="aa-box">
+        Lorem ipsum dolor sit, amet consecteturasdtesdfasdfasdfasdfadsfsdafasdfasdfasdasasdfasdfasdf adipisicing elit. Consequatur autem magnam ullam maxime, nulla perferendis aspernatur consequuntur, molestias omnis dolore corrupti in magni! Eius neque aliquam reiciendis magnam est! Facilis!
+    </div>
+
+    <h2 style="white-space: pre;">
+        san        kyi
+               tar
+    </h2>
+
+
+    <div style="height: 1000px;">
+        
+    </div>
+
+  </body>
+</html>

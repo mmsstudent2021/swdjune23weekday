@@ -1,0 +1,112 @@
+<form action="https://mms-it.com" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Register From</legend>
+
+        <input type="hidden" name="id" value="5">
+
+        <!-- <div class="">
+            <label for="your_photo">Your Photo</label>
+            <input type="file" id="your_photo" name="photo">
+        </div>
+        <br> -->
+
+        <div class="">
+            <label for="your_name">Your Name</label>
+            <input type="text" id="your_name" name="name" value="hhz">
+        </div>
+        <br>
+
+        <div class="">
+            <label for="your_email">Email</label>
+            <input type="email" id="your_email" name="email" placeholder="example@mail.com" required>
+        </div>
+        <br>
+
+        <div class="">
+            <label for="Password">Password</label>
+            <input type="password" id="Password" name="password" required>
+        </div>
+        <br>
+
+        <div class="">
+            <label for="bd">Date of Birth</label>
+            <input type="date" id="bd" max="2003-01-01" name="bd">
+        </div>
+        <br>
+
+        <div class="">
+            <label for="Salary">Salary</label>
+            <input type="number" id="Salary" min="200000" max="250000" name="Salary">
+        </div>
+        <br>
+
+        <div class="">
+            <label for="Working_hours">Working Hours</label>
+            <input type="range" id="Working_hours" max="8" step="2" name="Working_hours">
+        </div>
+
+        <hr>
+
+
+        <div class="">
+            <label>Gender</label>
+            <div class="">
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+            </div>
+            <div class="">
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="">
+
+            <label>Your Skill</label>
+
+            <div class="">
+                <input type="checkbox" name="skill" id="html" value="html">
+                <label for="html">HTML</label>
+            </div>
+
+            <div class="">
+
+                <input type="checkbox" name="skill" id="css" value="css">
+                <label for="css">CSS</label>
+            </div>
+
+            <div>
+
+
+                <input type="checkbox" name="skill" id="js" value="js">
+                <label for="js">JavaScript</label>
+            </div>
+
+            <div class="">
+
+                <input type="checkbox" name="skill" id="php" value="php">
+                <label for="php">PHP</label>
+            </div>
+
+        </div>
+        <hr>
+        <label for="nation">Select Your Nation</label>
+        <select name="nation" id="nation">
+            <option value="mm">Myanmar</option>
+            <option value="th">Thailand</option>
+            <option value="kr">Korea</option>
+            <option value="sg">Singapore</option>
+        </select>
+        <hr>
+
+        <label for="Address">Address</label>
+        <textarea name="Address" id="Address" cols="35" rows="4"></textarea>
+        <br>
+        <br>
+        <button type="submit">Register</button>
+        <!-- <input type="submit" value="Register"> -->
+        <!-- <input type="button" value="Click Me"> -->
+    </fieldset>
+</form>

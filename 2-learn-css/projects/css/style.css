@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Padauk:wght@400;700&family=Raleway:wght@300;400;700&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+/* fonts */
+/* heading font */
+/* body (based) font */
+/* Display font */
+
+/* color */
+/* primary */
+/* secondary */
+/* accent */
+/* status */
+
+/* Global Setting */
+
+:root{
+    --primary : #0081a7;
+    --secondary : #8b8c89;
+    --danger : #f72585;
+    --dark : black;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", "Padauk", sans-serif;
+}
+
+body {
+  padding: 20px;
+}
+
+section {
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.sub-title {
+  margin-bottom: 10px;
+}
+
+.box {
+  border: 3px solid #000000;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.btn {
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.5s;
+}
+
+.btn:hover{
+    opacity: 0.9;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+
+  border: 2px solid var(--secondary);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+
+  border: 2px solid var(--danger);
+}
+
+.btn-dark {
+  background-color: #000000;
+
+  border: 2px solid #000000;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline-primary:hover{
+  background-color: #482ff7;
+    color: white;
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+}
+
+.btn-outline-danger {
+  background-color: transparent;
+  color: var(--danger);
+  border: 2px solid var(--danger);
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.btn-icon{
+
+    width: 40.4px;
+    height: 40.4px;
+    padding: 10px;
+    /* aspect-ratio: 1/1; */
+
+}
+
+.rounded-circle{
+    border-radius: 50%;
+}
+
+.rounded-pill {
+    border-radius: 40.4px;
+}
