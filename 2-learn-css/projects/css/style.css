@@ -40,9 +40,38 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
+.mb-sm{
+  margin-bottom: 10px;
+}
+
+.mb{
+  margin-bottom: 20px;
+}
+
+.p-sm{
+  padding: 10px;
+}
+.p{
+  padding: 20px;
+}
+
+.text-left{
+  text-align: left;
+}
+
+
+.text-center{
+  text-align: center;
+}
+
+
+.text-right{
+  text-align: right;
+}
+
+
 
 body {
-  padding: 20px;
 }
 
 section {
@@ -50,18 +79,14 @@ section {
 
 .title {
   font-size: 50px;
-  margin-bottom: 20px;
 }
 
 .sub-title {
   font-size: 25px;
-  margin-bottom: 10px;  
 }
 
 .box {
   border: 3px solid #000000;
-  margin-bottom: 20px;
-  padding: 20px;
   border-radius: 10px;
 }
 
@@ -148,3 +173,70 @@ section {
 .rounded-pill {
   border-radius: 40.4px;
 }
+
+
+.table{
+  width: 100%;
+  /* border: 1px solid black; */
+  border-collapse:collapse;
+}
+
+thead{
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+
+th,td{
+  /* border: 1px solid black; */
+  padding: 10px 20px;
+  vertical-align: top;
+}
+
+tr{
+  transition: background-color 0.5s;
+}
+
+tr:hover{
+  background-color: rgb(194, 194, 194) !important;
+}
+
+tbody tr:nth-child(even){
+  background-color: rgb(230, 230, 230);
+}
+
+.list{
+  /* border: 1px solid black; */
+  list-style: none;
+  /* padding: 10px; */
+}
+
+.list-item{
+  border-left: 5px solid black;
+  background-color: rgb(224, 224, 224);
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  /* border-radius: 5px; */
+  display: inline-block;
+  transition: 0.5s;
+  margin-right: 10px;
+}
+
+.list-item.active, .list-item:hover{
+  /* background-color: black; */
+  /* color: white; */
+  border-left: 10px solid black;
+  font-weight: bold;
+  background-color: rgb(214, 214, 214);
+
+}
+
+@media screen and (max-width:550px) {
+  .list-item {
+    display: block;
+    margin-right: 0;
+  }
+}
+
+
+
