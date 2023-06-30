@@ -2,7 +2,7 @@
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 
-/* fonts */
+/* fonts - family, size */
 /* heading font */
 /* body (based) font */
 /* Display font */
@@ -15,19 +15,31 @@
 
 /* Global Setting */
 
-:root{
-    --primary : #0081a7;
-    --secondary : #8b8c89;
-    --danger : #f72585;
-    --dark : black;
+:root {
+  --primary: #0081a7;
+  --secondary: #8b8c89;
+  --danger: #f72585;
+  --dark: black;
 
+  --body-font : "Raleway", "Padauk", sans-serif;
+  --body-font-size : 14px;
+
+  --heading-font :  "Montserrat", sans-serif;
+  /* --heading-font-size :  */
 }
 
 * {
   padding: 0;
   margin: 0;
-  font-family: "Raleway", "Padauk", sans-serif;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
 }
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--heading-font);
+}
+
+
 
 body {
   padding: 20px;
@@ -37,11 +49,13 @@ section {
 }
 
 .title {
+  font-size: 50px;
   margin-bottom: 20px;
 }
 
 .sub-title {
-  margin-bottom: 10px;
+  font-size: 25px;
+  margin-bottom: 10px;  
 }
 
 .box {
@@ -52,18 +66,21 @@ section {
 }
 
 .btn {
+  height: 40px;
+  line-height: 40px;
   color: white;
-  padding: 10px 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 14px;
   border-radius: 5px;
   display: inline-block;
   transition: background-color 0.5s;
 }
 
-.btn:hover{
-    opacity: 0.9;
+.btn:hover {
+  opacity: 0.9;
 }
 
 .btn-primary {
@@ -96,9 +113,9 @@ section {
   border: 2px solid var(--primary);
 }
 
-.btn-outline-primary:hover{
+.btn-outline-primary:hover {
   background-color: #482ff7;
-    color: white;
+  color: white;
 }
 
 .btn-outline-secondary {
@@ -119,19 +136,15 @@ section {
   border: 2px solid #000000;
 }
 
-.btn-icon{
-
-    width: 40.4px;
-    height: 40.4px;
-    padding: 10px;
-    /* aspect-ratio: 1/1; */
-
+.btn-icon {
+  padding: 0;
+  aspect-ratio: 1;
 }
 
-.rounded-circle{
-    border-radius: 50%;
+.rounded-circle {
+  border-radius: 50%;
 }
 
 .rounded-pill {
-    border-radius: 40.4px;
+  border-radius: 40.4px;
 }
