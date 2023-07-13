@@ -147,6 +147,7 @@ let st3 = {
 }
 
 const students = [st1,st2,st3];
+// console.table(students);
 
 // console.log(students);
 
@@ -160,7 +161,7 @@ const students = [st1,st2,st3];
 // console.log(typeof age);
 // console.log(typeof pens);
 
-console.log( fruits);
-console.log(st1);
+// console.log( fruits);
+// console.log(st1);
 
 
