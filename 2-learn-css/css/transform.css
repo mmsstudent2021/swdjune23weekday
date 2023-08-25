@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+}
+
+.box{
+
+    margin: 150px;
+    /* padding: 20px; */
+
+    border: 2px solid black;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.box img{
+
+    width: 200px;
+
+    /* transform: translateX(50px) translateY(100px) rotate(360deg); */
+
+    /* transform: scale(0.5); */
+
+    /* transform: skewY(10deg); */
+
+    /* translate: -50px; */
+    /* rotate: 45deg; */
+    /* scale: 0.5; */
+
+    /* position: absolute; */
+    /* right: -100px;
+    top: -100px; */
+    /* right: 0; */
+    /* left: 0; */
+    /* bottom: 0px; */
+    /* margin: auto; */
+    /* translate: 50% -50%; */
+    /* translate:0 50%; */
+
+    position: absolute;
+    translate: -120%;
+    transition: 0.5s;
+
+
+
+}
+
+.box:active img{
+    translate: 0;
+}
+
+body{
+    padding: 50px;
+}
+
+
+.dropdown{
+
+    /* border: 2px solid black; */
+    width: 200px;
+    position: relative;
+    display: inline-block;
+
+
+}
+
+.dropdown-btn{
+    padding: 15px 30px;
+    width: 100%;
+}
+
+.dropdown-box{
+    /* display: none; */
+    width: 100%;
+    padding: 15px;
+    border: 2px solid gray;
+    position: absolute;
+    background-color: white;
+    translate: 0 50px;
+    transition: 500ms;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dropdown-box p{
+
+}
+
+.dropdown-box p:hover{
+    background-color: skyblue;
+}
+
+.dropdown-btn:hover + .dropdown-box{
+    /* display: block; */
+    translate: 0 10px;
+    opacity: 1;
+    pointer-events: all;
+
+}
+
+
+.posters .poster{
+    position: fixed;
+    width: 300px;
+    left: 0;
+    
+    translate: -95%;
+    rotate: 5deg;
+    box-shadow: 0 0 20px 10px #00000060;
+    transition: 300ms;
+}
+
+.posters .poster:nth-child(1){
+    top: 100px;
+
+}
+
+.posters .poster:nth-child(2){
+    top: 200px;
+    
+}
+
+.posters .poster:nth-child(3){
+    top: 300px;
+    
+}
+
+
+.posters .poster:hover{
+    translate: 0;
+    rotate: 5deg;
+}
+
+.top-logo{
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: 100px solid pink;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+
+}
+
+.top-logo p{
+    position: fixed;
+    /* background-color: gray; */
+    padding: 10px;
+    top: -6px;
+    right: 21px;
+    rotate: 45deg;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    color: gray;
+
+}

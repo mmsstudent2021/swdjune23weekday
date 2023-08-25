@@ -1,0 +1,178 @@
+
+@font-face {
+    font-family: "hhz";
+    src: url(/Roboto_Slab/static/RobotoSlab-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "hhz";
+    src: url(/Roboto_Slab/static/RobotoSlab-Light.ttf);
+    font-weight: 300;
+}
+
+
+@font-face {
+    font-family: "hhz";
+    src: url(/Roboto_Slab/static/RobotoSlab-Bold.ttf);
+    font-weight: 700;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 600px;
+  height: 350px;
+  background-color: pink;
+  background-image: url(/assets/images/poe-mamhe-thar-3.jpeg);
+  /* background: pink; */
+  background-size: 200px;
+  background-repeat: no-repeat;
+  border: 20px solid rgba(0, 0, 0, 0.508);
+  padding: 20px;
+  /* background-origin: border-box; */
+  background-clip: padding-box;
+  /* background-position: right bottom; */
+}
+
+.clip-box {
+  border: 20px solid black;
+  text-align: center;
+}
+
+.clip-box h1 {
+  font-family: "Arial Black";
+  font-size: 6em;
+  /* background-image: linear-gradient(red,green); */
+  background: -webkit-linear-gradient(#eee, #333);
+  /* background-image: url("https://www.hot-dinners.com/images/stories/blog/2019/happylamb.jpg"); */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #00000000;
+  background-position: center;
+}
+
+.loading {
+  width: 300px;
+  height: 300px;
+  background-image: conic-gradient(black 1deg, gray 1deg);
+  border-radius: 50%;
+  position: relative;
+}
+
+.loading::before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 50%;
+}
+
+.shadow {
+  /* height: 100px; */
+  margin: 30px;
+  padding: 200px;
+  display: inline-block;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  /* box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px; */
+
+  box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px,
+    rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px,
+    rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px,
+    rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px,
+    rgb(255, 85, 85) 40px -40px;
+}
+
+.price-tag{
+
+    height: 100px;
+    font-size: 2.5em;
+    line-height: 100px;
+    width: 150px;
+    text-align: center;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-family: hhz;
+    color: white;
+    background-color: red;
+    position: relative;
+    margin-left: 100px;
+}
+
+.price-tag::before{
+    content: "";
+    position: absolute;
+    border: 50px solid pink;
+    border-color: transparent red transparent yellow;
+    border-left-width: 0;
+    right: 100%;
+}
+
+.price-tag::after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -20px;
+    
+}
+
+.price-tag p{
+    margin: 0;
+}
+
+
+.text-box{
+
+}
+
+.text-box h1{
+    font-family: hhz;
+}
+
+.text-box p{
+    font-family: hhz;
+    font-weight: 300;
+}
+
+
+
+.img-box{
+
+}
+
+
+.img-box img{
+
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border:5px solid white;
+    margin-left: -100px;
+}
+
+.img-box img:nth-child(1){
+    margin-left: 0;
+}
+
+.img-box img:nth-child(3){
+    object-position: top;
+}

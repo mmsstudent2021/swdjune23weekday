@@ -1,0 +1,141 @@
+body {
+  height: 3000px;
+}
+
+.box {
+  /* width: 500px; */
+  height: 400px;
+  border: 5px solid black;
+  margin: 50px;
+  position: relative;
+}
+
+.img {
+  width: 100px;
+  border: 2px solid black;
+  /* position: static; */
+  /* relative, absolute, fixed, sticky */
+  /* position: relative; */
+  /* top, right, bottom, left */
+  /* top: -50px;
+    left: -50px; */
+  /* bottom: 0;
+    right: 0; */
+  /* display: block; */
+  /* margin: auto; */
+  /* top: -50px; */
+}
+
+.img.one {
+  /* position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 10002; */
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.img.two {
+  filter: contrast(200%);
+  /* position: relative;
+    top: 100px;
+    z-index: 10001; */
+}
+.img.three {
+  filter: grayscale(100%);
+  /* position: relative;
+    top: 150px;
+    left: -50px;
+    z-index: 10000; */
+}
+
+.title {
+}
+
+.title::before {
+  content: "AAA ";
+}
+
+.title::after {
+  content: " ZZZ";
+}
+
+.message-box {
+  /* border: 3px solid black; */
+  background-color: gray;
+  color: white;
+  box-sizing: border-box;
+  width: 300px;
+  padding: 10px 20px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.message-box::before {
+  content: " ";
+  /* width: 20px;
+    height: 20px; */
+  /* background-color: red; */
+  position: absolute;
+  border: 10px solid pink;
+  border-color: gray transparent transparent gray;
+  /* bottom: -20px; */
+  /* left: 0; */
+  top: 100%;
+  left: 0;
+}
+
+/* .x{
+ 
+    margin-top: 50px;
+    display: inline-block;
+    border: 20px solid pink;
+    border-color: red transparent transparent red;
+} */
+
+.arrow {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 0px;
+  display: block;
+  width: 80px;
+  text-align: center;
+  color: white;
+  background-color: gray;
+  position: relative;
+  margin: 50px 25px;
+}
+
+.arrow::before {
+  content: "";
+  /* border: 25px solid pink;
+    border-color: gray gray gray transparent; */
+  border: 25px solid gray;
+  border-left-color: transparent;
+  border-right-color: pink;
+  border-right-width: 0;
+  position: absolute;
+  left: -25px;
+  top: 0;
+}
+
+.arrow::after {
+  content: "";
+  /* border: 25px solid pink;
+    border-color: red green blue pink; */
+  border: 25px solid transparent;
+  border-left-color: gray;
+  border-right-width: 0;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+.shape {
+
+    width: 300px;
+    height: 300px;
+    background-color: pink;
+  -webkit-clip-path: polygon(0% 0%, 86% 7%, 100% 50%, 64% 86%, 0% 100%);
+  clip-path: polygon(0% 0%, 86% 7%, 100% 50%, 64% 86%, 0% 100%);
+}
