@@ -6,22 +6,31 @@
     <title>Document</title>
     <link rel="stylesheet" href="../dist/output.css">
 </head>
-<body>
+<body class="dark">
 
     
-   <div class="flex justify-center items-center h-screen">
+   <div class="flex justify-center items-center h-screen
+   dark:bg-slate-800">
 
     <!-- Card  -->
-    <div class="max-w-xl  p-5 rounded-md shadow-2xl border">
+    <div class="max-w-xl  p-5 rounded-md shadow-2xl border dark:bg-slate-900 dark:border-0 dark:text-slate-300  
+    dark:hover:bg-slate-700 transition-all duration-300 dark:hover:text-blue-500
+
+    ">
         <!-- img  -->
-        <div class="flex justify-start items-center gap-x-4 mb-3"> 
+        <div class="flex justify-start items-center gap-x-4 mb-3
+        
+        "> 
             
             <div class="">
-                <img class="w-24 h-24 rounded-full border-2 border-slate-800" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3276&q=80" alt="">
+                <img class="w-24 h-24 rounded-full border-2 border-slate-800
+
+                dark:border-slate-100 dark:border-2
+                " src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3276&q=80" alt="">
             </div>
     
             <div>
-                <h1 class="text-4xl font-bold">Name</h1>
+                <h1 class="text-4xl font-bold ">Name</h1>
                 <p class="text-xl">Senior Program Manager at Microsoft</p>
             </div>
             
@@ -29,7 +38,7 @@
         </div>
     
         <!-- text  -->
-        <div class="text-base"> 
+        <div class="text-base dark:text-slate-400"> 
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam saepe nulla quidem obcaecati consequatur? Quasi harum corrupti voluptas tempore hic ipsum, incidunt aperiam beatae minima consequatur quod quis cupiditate. Voluptatibus!</p>
         </div>
         
