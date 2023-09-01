@@ -6,12 +6,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="../dist/output.css">
 </head>
-<body>
+<body class="dark">
     
-    <div class="container mx-auto">
+    <div class="bg-blue-500 dark:bg-slate-950">
 
         <!-- Nav  -->
-        <nav class="flex justify-between items-center text-lg bg-blue-500 py-4 px-2">
+        <nav class="flex backdrop-blur-md bg-opacity-80 fixed w-full left-4 right-0  justify-between items-center container mx-auto  text-lg  py-4 px-2 text-slate-100">
 
             <!-- first child  -->
             <div class="flex justify-center items-center">
@@ -22,15 +22,57 @@
             <!-- second child  -->
             <div>
                 <!-- ul>li*4>a{text}  -->
-                <ul class="flex justify-center items-center gap-x-5">
-                    <li><a href="">text</a></li>
-                    <li><a href="">text</a></li>
-                    <li><a href="">text</a></li>
-                    <li><a href="">text</a></li>
+                <ul class="flex justify-center items-center gap-x-5 ">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Contact Us</a></li>
                 </ul>
 
             </div>
         </nav>
+
+
+
+    </div>
+
+    <div class=" bg-slate-100 pt-10 dark:bg-slate-900 h-screen">
+
+      <div class="container mx-auto">
+          <!-- Card  -->
+          <div class="max-w-xl p-5 rounded-md shadow-2xl border dark:bg-slate-800 dark:border-0 dark:text-slate-300  
+          dark:hover:bg-slate-700 transition-all duration-300 dark:hover:text-blue-500
+      
+          ">
+              <!-- img  -->
+              <div class="flex justify-start items-center gap-x-4 mb-3
+              
+              "> 
+                  
+                  <div class="">
+                      <img class="w-24 h-24 rounded-full border-2 border-slate-800
+      
+                      dark:border-slate-100 dark:border-2
+                      " src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3276&q=80" alt="">
+                  </div>
+          
+                  <div>
+                      <h1 class="text-4xl font-bold ">Name</h1>
+                      <p class="text-xl">Senior Program Manager at Microsoft</p>
+                  </div>
+                  
+          
+              </div>
+          
+              <!-- text  -->
+              <div class="text-base dark:text-slate-400"> 
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam saepe nulla quidem obcaecati consequatur? Quasi harum corrupti voluptas tempore hic ipsum, incidunt aperiam beatae minima consequatur quod quis cupiditate. Voluptatibus!</p>
+              </div>
+              
+          </div>
+      </div>
+
+      <div class="h-[2000px]"></div>
 
 
 
