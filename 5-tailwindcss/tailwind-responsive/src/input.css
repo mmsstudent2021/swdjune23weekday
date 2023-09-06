@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .feature-header{
+        @apply flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6
+    }
+
+    .feature-card {
+        @apply p-4 sm:w-1/2 hover:bg-slate-500 transition-all duration-300 hover:rounded-lg hover:text-yellow-50 md:w-1/4 flex
+    }
+}
