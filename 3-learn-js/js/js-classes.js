@@ -97,36 +97,36 @@
 // console.log(a.x());
 // console.log(a.y());
 
-class Student {
-  subjects = ["WDF", "SWD", "WAD"];
+// class Student {
+//   subjects = ["WDF", "SWD", "WAD"];
 
-  constructor(inputName, inputGender, inputAge, inputTownship, inputSubject) {
-    this.name = inputName;
-    this.gender = inputGender;
-    this.proNoun = this.defineProNoun();
-    this.age = inputAge;
-    this.birthYear = 2023 - inputAge;
-    this.township = inputTownship;
-    this.subject = this.subjects[inputSubject];
-  }
+//   constructor(inputName, inputGender, inputAge, inputTownship, inputSubject) {
+//     this.name = inputName;
+//     this.gender = inputGender;
+//     this.proNoun = this.defineProNoun();
+//     this.age = inputAge;
+//     this.birthYear = 2023 - inputAge;
+//     this.township = inputTownship;
+//     this.subject = this.subjects[inputSubject];
+//   }
 
-  defineProNoun() {
-    return this.gender === "male" ? "he" : "she";
-  }
+//   defineProNoun() {
+//     return this.gender === "male" ? "he" : "she";
+//   }
 
-  introduce() {
-    return `My name is ${this.name} and ${this.proNoun} was born in ${this.birthYear} at ${this.township}`;
-  }
-}
+//   introduce() {
+//     return `My name is ${this.name} and ${this.proNoun} was born in ${this.birthYear} at ${this.township}`;
+//   }
+// }
 
-const st1 = new Student("hein htet zan", "male", 29, "Bahan", 0);
-console.log(st1);
+// const st1 = new Student("hein htet zan", "male", 29, "Bahan", 0);
+// console.log(st1);
 
-const st2 = new Student("Su Su", "female", 18, "tawme", 1);
-console.log(st2);
+// const st2 = new Student("Su Su", "female", 18, "tawme", 1);
+// console.log(st2);
 
-const st3 = new Student("Kyaw Kyaw", "male", 19, "hlaing", 1);
-console.log(st3);
+// const st3 = new Student("Kyaw Kyaw", "male", 19, "hlaing", 1);
+// console.log(st3);
 
 // static properties & methods
 
@@ -167,3 +167,125 @@ console.log(st3);
 // // console.log(a.#y);
 // // console.log(a.z());
 // console.log(a.b());
+
+// class A {
+//   x = "xxx";
+//   y = "yyy"
+// }
+
+// class B extends A {
+//   z = "zzz";
+// }
+
+// const b = new B;
+// console.log(b);
+
+class Person {
+  constructor(name, gender) {
+    this.name = name;
+    this.gender = gender;
+  }
+  eat() {
+    return `${this.name} can eat`;
+  }
+
+  sleep() {
+    return `${this.name} can sleep`;
+  }
+}
+
+class Student extends Person {
+  constructor(name, gender, subject) {
+    super(name, gender);
+    this.subject = subject;
+  }
+
+  learn() {
+    return `${this.name} can learn ${this.subject}`;
+  }
+}
+
+class Monitor extends Student {
+  constructor(name, gender, subject, room) {
+    super(name, gender, subject);
+    this.room = room;
+  }
+
+  guard() {
+    return `${this.name} can guard students from ${this.room}`;
+  }
+}
+
+// const m = new Monitor("Su Su","female","Web Development","A");
+// console.log(m);
+
+// const s = new Student("kyaw kyaw","male","Web Development");
+// console.log(s.name);
+// console.log(s.gender);
+// console.log(s.eat());
+// console.log(s.learn());
+
+// const me = new Person("hein htet zan","male");
+// console.log(me);
+
+// getter & setter
+
+class BankAccount {
+  //getter, setter
+
+  // getBalance(){
+  //   return this.#balance;
+  // }
+
+  // setBalance(amount){
+  //   this.#balance = amount;
+  // }
+
+  #balance = 0;
+  transition = [];
+  transitionIndex = 0;
+
+  deposit(amount) {
+    this.#balance += amount;
+    this.transition[this.transitionIndex++] = {
+      amount,
+      type: "deposit",
+    };
+  }
+
+  checkBalance() {
+    return this.#balance;
+  }
+
+  withdraw(amount) {
+    if (amount < this.#balance) {
+      this.#balance -= amount;
+      this.transition[this.transitionIndex++] = {
+        amount,
+        type: "withdraw",
+      };
+    } else {
+      console.log("Not enough for withdraw",amount);
+    }
+  }
+
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const myBankAccount = new BankAccount("hein htet zan", 100);
+
+myBankAccount.deposit(100);
+myBankAccount.deposit(20);
+myBankAccount.deposit(50);
+
+myBankAccount.withdraw(30);
+
+console.log(myBankAccount.checkBalance());
+console.table(myBankAccount.transition);
+
+// myBankAccount.balance = 1000;//overwrite
+// console.log(myBankAccount.#balance);//access
+// myBankAccount.setBalance(100);
+// console.log(myBankAccount.getBalance());
