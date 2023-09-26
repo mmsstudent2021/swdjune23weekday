@@ -21,9 +21,9 @@
 // const date = new Date(1994,6,22);
 // console.log(date);
 
-const current = new Date();
+// const current = new Date();
 // current.setHours(current.getHours() + 300);
 // console.dir(current);
 // current.setMonth(current.getMonth() + 6)
 // current.setDate(current.getDate() + 25)
-console.log(current);
+// console.log(current);
