@@ -269,3 +269,344 @@ const products = [
     },
   },
 ];
+
+// console.dir(points);
+// console.log(points.length);
+// console.log(points.toString());
+// console.log(points.join(" > "));
+// points.push("yyy")
+// points.push("xxx")
+// points.push("zzz")
+// points.unshift("aaa")
+// points.pop()
+// points.pop()
+// points.pop()
+// points.shift()
+// points.shift()
+// points.shift()
+
+// console.log(points);
+
+// // points.sort()
+// // points.reverse()
+
+// // points.sort((a, b) => {
+// //     // console.log(a,b);
+// //   return b - a;
+// // });
+
+// console.log(points);
+
+// console.log(points);
+// console.log(points.includes(2));
+// console.log(points.includes(56));
+// console.log(points.indexOf(34));
+// console.log(points.includes(15));
+// console.log(points.includes(100));
+
+const animals = ["ant", "bison", "camel", "duck", "elephant"];
+
+// console.log(animals);
+
+// // console.log(animals.slice(2,4));
+// console.log(animals.splice(1,2,"aaa","bbb","ccc"));
+
+// console.log(animals);
+
+// const arr = points.concat(fruits).concat(animals);
+// console.log(arr);
+
+// const arr = [...points,...fruits,...animals];
+// console.log(arr);
+
+// const run = function(x,y,...rest){
+//     console.log(...rest);
+//     return x * y;
+// }
+
+// console.log(run(4,5,"aaa","bbb","ccc"));
+
+// console.log(points);
+
+// points.push("xxx")
+// points.push("yyy")
+// points.push("zzz")
+
+// const arr = ["aaa","bbb","ccc",...points,"xxx","yyy","zzz"];
+// console.log(arr);
+
+// console.log(points);
+
+// const x = [];
+
+// x[0] = "a"
+// x[1] = "b"
+// x[2] = "c"
+
+// console.log(x);
+
+// const y = {};
+
+// y.a = "aaa";
+// y.b = "bbb";
+// y.c = "ccc";
+
+// console.log(y);
+
+// const z = "hein";
+
+// console.log(z);
+
+// console.log(points);
+
+// console.log([...points,"zzz"])
+
+// console.log(points);
+
+// console.log("A".charCodeAt());
+// console.log("a".charCodeAt());
+// console.log("က".charCodeAt());
+// console.log("အ".charCodeAt());
+
+// console.log("a" < "က");
+
+// products.sort((a,b) => {
+
+//   // -
+//   // +
+//   // 0
+//   // console.log(a.price,b.price);
+//   // console.log(b.price - a.price);
+
+//   // if (a.title > b.title){
+//   //   return 1;
+//   // }else{
+//   //   return -1;
+//   // }
+
+//   return  b.rating.rate -  a.rating.rate;
+// } )
+
+// console.log(products);
+
+// const arr = points.forEach(el => {
+//   console.log(el);
+//   return el
+// });
+
+// const arr = points.map(el => {
+//   console.log(el);
+//   return el * 2
+// });
+
+// console.log(arr);
+
+// console.table(products);
+
+// const result = products.map( el => {
+//   // el.price += 10
+//   return {
+//     title : el.title,
+//     price : el.price,
+//     image : el.image
+//   };
+// });
+
+// const x = [2,4,7,9,13,17];
+
+// const result = products.filter((el) => {
+//   // return el.price <= 50
+
+//   // return el.rating.rate > 4
+
+//   // return false
+
+//   // return el.id === 10 || el.id === 20 || el.id === 15;
+
+//   console.log(el);
+
+//   return false;
+//   // return x.includes(el.id)
+// });
+
+// console.table(result);
+
+// console.log(
+//   points.filter((el) => {
+//     console.log(el);
+//     return el === 2;
+//   })
+// );
+
+// console.log(products.filter(el => el.price < 50));
+// console.log(products.find(el => el.price < 50));
+
+// console.log(products.filter(el => el.id === 5));
+
+// console.log(products);
+// console.log(products.find(el => el.id === 5));
+// console.log(products.findIndex(el => el.id === 5));
+
+// let total = 0;
+// console.log(points);
+
+// // for(i of points){
+// //   // console.log(i);
+// //   total += i;
+// // }
+// points.forEach(el => total+= el);
+
+// console.log(total);
+
+// const r =  points.reduce((pv,cv)=>{
+//   console.log(pv,cv);
+//   return pv + cv
+// },0)
+
+// const r = points.reduce((pv,cv) => pv+cv,0)
+
+// console.log(r);
+
+// console.log(
+//   products.reduce((pv, cv) => {
+//     // console.log(cv);
+//     return pv + cv.price;
+//   },0)
+// );
+
+// console.log(products.some(el => el.price > 500));
+// console.log(products.every(el => el.price < 1500));
+
+// class Chain {
+//   a = "aaa";
+
+//   x() {
+//     console.log("this is x method");
+//     return this;
+//   }
+
+//   y() {
+//     console.log("this is y method");
+//     return this;
+//   }
+
+//   z() {
+//     console.log("this is z method");
+//     return this;
+//   }
+// }
+
+// const chain = new Chain();
+// // console.log(chain.a);
+// // console.log(chain.x());
+// // console.log(chain.y());
+// // console.log(chain.z());
+
+// chain.x().y().z().x().z().x();
+
+// price < 50 ကုန်ပစ္စတွေရဲ့ စုစုပေါင်း တန်ဖိုး
+
+// console.log(
+//   products
+//   .filter( product  => product.price < 50)
+//   .reduce( (pv,cv) => pv + cv.price , 0 )
+// );
+
+// console.log(fruits);
+
+// fruits ထဲက စကားလုံ ၅လုံးပါတာတွေရှာမယ် အကြီးပြောင်းမယ် ပြီးတော့ and နဲ့ဆက်ပြီး စာသားအဖြစ်ပြမယ်
+
+// console.log(
+//   fruits
+//     .filter((fruit) => fruit.length === 5)
+//     .map((fruit) => fruit.toUpperCase())
+//     .join(" and ")
+// );
+
+// to Pascal case
+// hein htet zan => HeinHtetZan
+
+// const myName = "hein htet zan";
+
+// console.log(
+//   myName
+//     .split(" ")
+//     .map((el) => el.replace(el[0], el[0].toLocaleUpperCase()))
+//     .join("")
+// );
+
+// let text = "hein";
+
+// console.log(text.replace(text[0],text[0].toUpperCase()));
+
+
+// const newArr = [...fruits,...points]
+// console.log(newArr);
+
+
+// const obj1 = {
+//   a : "aaa",
+//   b : "bbb",
+//   c : "ccc"
+// }
+
+// console.log(obj1.a);
+// console.log(obj1.b);
+// console.log(obj1.c);
+
+// const {a,b} = obj1;
+
+// console.log(a);
+// console.log(b);
+
+// const obj2 = {
+//   x : "xxx",
+//   y : "yyy",
+//   z : "zzz",
+// }
+// obj2.x = "x x x"
+
+// const newObj = {
+//   ...obj1,
+//   ...obj2
+// }
+
+// console.log(obj2);
+// console.log(newObj);
+// console.log({...obj2,x:"x x x"});
+
+// console.log(obj2);
+
+
+// console.log(fruits);
+
+// console.log(fruits[0]);
+// console.log(fruits[1]);
+// console.log(fruits[2]);
+
+// const [x,y] = fruits;
+
+// console.log(x);
+// console.log(y);
+// console.log(fruits[3]);
+// console.log(a);
+
+
+
+// console.table(
+//   products.map(product => {
+//     return {
+//       title : product.title,
+//       price : product.price,
+//       image : product.image
+//     }
+//   })
+// );
+
+// console.table(
+//   products.map(({title,price,image}) => {
+//     return {
+//       title,price,image
+//     }
+//   })
+// );

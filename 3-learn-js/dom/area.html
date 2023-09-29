@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Area Calculator</title>
+    <style>
+      .result-box {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+      }
+      #output {
+        display: inline-block;
+        width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Area Calculator</h1>
+
+      <div class="result-box">
+        <p>Result : <span id="output"></span></p>
+        <button id="storeBtn">Store</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+      <div class="">
+        <input type="number" id="widthInput" placeholder="Input Width" />
+        <input type="number" id="breadthInput" placeholder="Input Breadth" />
+        <button id="calcBtn">Calculate</button>
+      </div>
+      <ul id="recordLists"></ul>
+    </main>
+
+    <script>
+      //selectors
+      const output = document.getElementById("output");
+      const storeBtn = document.getElementById("storeBtn");
+      const clearBtn = document.getElementById("clearBtn");
+      const widthInput = document.getElementById("widthInput");
+      const breadthInput = document.getElementById("breadthInput");
+      const calcBtn = document.getElementById("calcBtn");
+      const recordLists = document.getElementById("recordLists");
+
+      // funs
+      const clearAll = () => {
+        output.innerHTML = null;
+        widthInput.value = null;
+        breadthInput.value = null;
+      }
+
+
+      // event listen
+      calcBtn.onclick = () => {
+        const area = widthInput.valueAsNumber * breadthInput.valueAsNumber;
+        output.innerHTML = `${area} ft<sup>2</sup>`;
+      };
+
+      clearBtn.onclick = clearAll;
+
+      storeBtn.onclick = () => {
+        recordLists.innerHTML += `<li> ${widthInput.value} ft * ${breadthInput.value} ft = ${output.innerHTML}</li>`;
+
+        clearAll()
+      };
+    </script>
+  </body>
+</html>
