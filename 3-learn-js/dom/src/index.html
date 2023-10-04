@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Dom</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
+  <body>
+    <h1 id="heading" title="Myanmar Greeting Message " class="bg-blue-600 p-6 text-white text-3xl font-mono">
+      Min Ga Lar Par
+    </h1>
+
+    <button class="bg-gray-400 p-2 mt-3 active:bg-gray-100 ms-3" id="hide">
+      hide
+    </button>
+    <button class="bg-gray-400 p-2 mt-3 active:bg-gray-100" id="show">
+      show
+    </button>
+    <button class="bg-gray-400 p-2 mt-3 active:bg-gray-100" id="toggle">
+      toggle
+    </button>
+
+    <a href="https://mms-it.com">MMS IT</a>
+
+    <input type="file" accept="image/jpeg,image/png" multiple>
+
+    <br />
+    <br />
+
+    <img class="w-40 aspect-square object-cover ms-3" src="./img/mypoe.jpeg" alt="" />
+
+    <br />
+    <br />
+
+    <p id="para">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda
+      corrupti.
+    </p>
+
+    <ul id="lists">
+      <li class="list">apple</li>
+      <li class="list">orange</li>
+      <li class="list">mango</li>
+    </ul>
+
+    <input type="text" id="textInput" placeholder="Text Input" />
+    <input type="number" id="numInput" placeholder="Your Salary" />
+    <input type="date" id="dateInput" placeholder="Your Birth Day" />
+    <button id="btn">Click Me</button>
+
+    <br />
+    <br />
+
+    <select name="subject" id="">
+      <option value="mm">Myanmar</option>
+      <option value="en">English</option>
+      <option value="math">Math</option>
+      <option value="phy">Physics</option>
+    </select>
+
+    <br />
+    <br />
+
+    <div class="">
+      <label for="">Select Gender</label>
+      <input type="radio" name="gender" id="genderMale" value="male" />
+      <label for="genderMale">Male</label>
+
+      <input type="radio" name="gender" id="genderFemale" value="female" />
+      <label for="genderFemale">Female</label>
+
+      <input type="radio" name="gender" id="genderGay" value="gay" />
+      <label for="genderGay">Gay</label>
+    </div>
+
+    <script>
+
+
+      const a = document.querySelector("a");
+      const img = document.querySelector("img");
+      // console.log(img.src);
+      // console.log(img.getAttribute("src"));
+
+      // img.src = "./img/poe-yellow.jpeg";
+      img.setAttribute("src","./img/poe-yellow.jpeg")
+
+      // console.dir(img);
+
+      // console.log(a);
+      // a.target = "_blank"
+      // a.setAttribute("target","_blank")
+
+      // a.href = "https://google.com"
+
+      console.log(a.href);
+
+      const heading = document.querySelector("#heading");
+      // heading.title = "san kyi tar"
+      // heading.setAttribute("title","hello hello")
+      // console.log(heading.title);
+      // console.log(heading.getAttribute("title"));
+      // const hide = document.querySelector("#hide");
+      // const show = document.querySelector("#show");
+      // const toggle = document.querySelector("#toggle");
+
+      // hide.onclick = () => {
+      //    heading.classList.add("hidden")
+      // }
+
+      // show.onclick = () => {
+      //    heading.classList.remove("hidden")
+      // }
+
+      // toggle.onclick = () => {
+      //    heading.classList.toggle("hidden")
+      // }
+
+      // heading.classList.remove("p-6")
+      // heading.classList.replace("p-6","p-8")
+
+      // heading.classList.add("m-5")
+
+      //heading.classList.toggle("hidden") // hide
+      //heading.classList.toggle("hidden") // show
+
+      // console.log(heading.classList.contains("m-5"));
+
+      // console.dir(heading.className);
+      // console.log(heading.classList);
+
+      // heading.style.backgroundColor = "skyblue";
+      // heading.style.color = "blue";
+      // heading.style.border = "3px solid red";
+      // heading.style.borderTop = "3px solid red";
+      // heading.style.fontFamily = "monospace";
+
+      //console.log(heading.style);// get style
+
+      // tagName . #
+      // " " > + ~
+      // :hover :checked
+      // ::
+      // [attr] [attr="value"] [attr~="value"]
+
+      // const genders = document.querySelectorAll(`[name='gender']`);
+      // console.log(genders);
+
+      // const eleToArr = [...genders];
+      // console.log(eleToArr);
+
+      // const subject = document.querySelector(`[name="subject"]`);
+
+      // console.log(subject.value);
+      // const r = document.querySelectorAll(".list");
+      // console.log(r);
+
+      // const inputs = document.getElementsByTagName("input");
+      // console.log(inputs);
+
+      // const lis = document.getElementsByClassName("list")
+      // console.log(lis);
+
+      // lis[0].innerText = "aaaa"
+
+      // console.log(lis[0]);
+      // console.log(lis[1]);
+      // console.log(lis[2]);
+
+      // console.log(document);
+      // select
+      // const heading = document.getElementById("heading");
+      // const para = document.getElementById("para");
+      // const lists = document.getElementById("lists");
+      // const list2 = document.getElementById("list2");
+      // const textInput = document.getElementById("textInput");
+      // const numInput = document.getElementById("numInput");
+      // const dateInput = document.getElementById("dateInput");
+      // const btn = document.getElementById("btn");
+
+      // console.dir(heading);
+      // console.dir(para);
+      // console.dir(btn);
+
+      //   console.log(heading.innerText);
+
+      //   heading.innerText = "San Kyi Tar Par";
+
+      // const showMyName = () => {
+      //   console.log("Hein Htet Zan");
+      // };
+
+      //   btn.onclick = showMyName
+      //   btn.ondblclick = showMyName;
+      // btn.addEventListener("click",showMyName)
+
+      // console.dir(btn);
+
+      // console.log(lists.innerHTML);
+      // lists.innerHTML = "<li>one</li><li>two</li><li>three</li>"
+      // lists.innerHTML = lists.innerHTML + "<li>Lemon</li>";
+      // lists.innerHTML += "<li>Lemon</li>";
+      // console.log(textInput.value);
+      // textInput.value = "My Name"
+      // numInput.valueAsNumber = 15000;
+      // dateInput.value = "1994-07-22"
+      // dateInput.valueAsDate = new Date("1994-07-22")
+
+      // console.dir(textInput.value);
+      // console.dir(btn);
+
+      // console.dir(lists);
+      // console.dir(lists.innerText);
+      // console.dir(lists.innerHTML);
+
+      // console.dir(heading);
+      // console.dir(heading.innerText);
+      // console.dir(heading.innerHTML);
+      // console.log(para);
+      // console.log(lists);
+      // console.log(list2);
+    </script>
+  </body>
+</html>
