@@ -59,15 +59,7 @@ const createListUi = (text) => {
   // delete list
   const taskListDelBtn = list.querySelector(".tasklist-del-btn");
 
-  taskListDelBtn.addEventListener("click", () => {
-    console.log("U click del btn");
-    if (confirm("Are U sure to delete?")) {
-      list.remove();
-      countTaskList();
-    countDoneTaskList();
-
-    }
-  });
+  taskListDelBtn.addEventListener("click", listDelHandler);
 
   // edit list
 
@@ -95,10 +87,21 @@ const createListUi = (text) => {
     textBox.querySelector("input").toggleAttribute("checked");
     textBox.querySelector(".tasklist-text").classList.toggle("line-through");
     countDoneTaskList();
-
   });
 
   return list;
+};
+
+const listDelHandler = (event) => {
+  // console.log(event.target.parentElement);
+  // console.log(event.target.parentElement.parentElement);
+  // console.log(event.target.parentElement.parentElement.parentElement);
+  if (confirm("Are U sure to delete?")) {
+    // list.remove();
+    event.target.closest(".tasklist").remove();
+    countTaskList();
+    countDoneTaskList();
+  }
 };
 
 const countTaskList = () => {
@@ -106,7 +109,9 @@ const countTaskList = () => {
 };
 
 const countDoneTaskList = () => {
-  doneCounter.innerText = document.querySelectorAll(".tasklist [type='checkbox']:checked").length;
+  doneCounter.innerText = document.querySelectorAll(
+    ".tasklist [type='checkbox']:checked"
+  ).length;
 };
 
 // handler
@@ -130,4 +135,19 @@ const addBtnHandler = () => {
 // listeners
 
 // addBtn.onclick = addBtnHandler;
-addBtn.addEventListener("click", addBtnHandler);
+addBtn.addEventListener("click", (event) => {
+  // console.log(event);
+  addBtnHandler();
+});
+// textInput.addEventListener("keydown",() => {
+//   console.log("key down");
+// })
+
+// work when u press enter
+
+textInput.addEventListener("keyup", (event) => {
+  // console.log(event);
+  if (event.key === "Enter") {
+    addBtnHandler();
+  }
+});

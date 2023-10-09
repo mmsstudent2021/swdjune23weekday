@@ -572,20 +572,12 @@ video {
           margin-inline-start: 0.75rem;
 }
 
-.mt-14{
-  margin-top: 3.5rem;
+.mt-0{
+  margin-top: 0px;
 }
 
 .mt-3{
   margin-top: 0.75rem;
-}
-
-.mt-2{
-  margin-top: 0.5rem;
-}
-
-.mt-0{
-  margin-top: 0px;
 }
 
 .flex{
@@ -606,6 +598,18 @@ video {
 
 .h-6{
   height: 1.5rem;
+}
+
+.h-\[\]{
+  height: ;
+}
+
+.h-\[3000\]{
+  height: 3000;
+}
+
+.h-\[3000px\]{
+  height: 3000px;
 }
 
 .w-28{
@@ -712,6 +716,10 @@ video {
      object-fit: cover;
 }
 
+.p-1{
+  padding: 0.25rem;
+}
+
 .p-10{
   padding: 2.5rem;
 }
@@ -734,10 +742,6 @@ video {
 
 .p-8{
   padding: 2rem;
-}
-
-.p-1{
-  padding: 0.25rem;
 }
 
 .px-3{
@@ -827,10 +831,6 @@ video {
 .blur{
   --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.last\:block:last-child{
-  display: block;
 }
 
 .last\:flex:last-child{
