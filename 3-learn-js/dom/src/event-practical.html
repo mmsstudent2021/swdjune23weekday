@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Event Practical</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
+  <body>
+    <div class="max-w-[550px] border border-neutral-700 p-6 mx-auto mt-24">
+      <p id="display"></p>
+
+      <div class="grid gap-3 grid-cols-3">
+        <div class="">
+          <label class="mb-3 block text-neutral-600" for="">Select Font</label>
+          <select
+            class="focus-visible:outline-none p-2 border border-neutral-700 block w-full h-10"
+            name=""
+            id="fontChanger"
+          >
+            <option value="">Font A</option>
+            <option value="">Font B</option>
+            <option value="">Font C</option>
+          </select>
+        </div>
+        <div class="">
+          <label class="mb-3 block text-neutral-600" for="">Text Color</label>
+          <input
+            id="colorChanger"
+            class="focus-visible:outline-none p-2 border border-neutral-700 block w-full h-10"
+            type="color"
+          />
+        </div>
+        <div class="">
+          <label class="mb-3 block text-neutral-600" for="">Font Size</label>
+          <input
+            id="fontsizeChanger"
+            class="focus-visible:outline-none p-2 border border-neutral-700 accent-neutral-700 block w-full h-10"
+            type="range"
+          />
+        </div>
+        <div class="col-span-3">
+          <label class="mb-3 block text-neutral-600" for="">Your Text</label>
+          <textarea
+            class="focus-visible:outline-none p-2 border border-neutral-700 block w-full"
+            name=""
+            id="textChanger"
+            cols="30"
+            rows="5"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <script src="./js/event-pracitcal.js"></script>
+  </body>
+</html>

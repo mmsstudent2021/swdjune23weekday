@@ -12,7 +12,7 @@ const createListUi = (text) => {
   const list = document.createElement("div");
   list.classList.add("tasklist");
   list.innerHTML = `
-    <div class=" animate__animated animate__fadeInUp  flex mb-5 justify-between items-center border-2 border-black p-5">
+    <div class=" animate__animated animate__slideInLeft   flex mb-5 justify-between items-center border-2 border-black p-5">
             <div class=" text-box flex  items-center">
               <input type="checkbox" class="w-5 h-5" />
               <div class="tasklist-text ms-2">
@@ -103,9 +103,17 @@ const listDelHandler = (event) => {
   // console.log(event.target.parentElement.parentElement.parentElement);
   if (confirm("Are U sure to delete?")) {
     // list.remove();
-    event.target.closest(".tasklist").remove();
-    countTaskList();
-    countDoneTaskList();
+    const list = event.target.closest(".tasklist");
+
+    list.children[0].classList.replace(
+      "animate__slideInLeft",
+      "animate__backOutRight"
+    );
+    list.addEventListener("animationend", () => {
+      list.remove();
+      countTaskList();
+      countDoneTaskList();
+    });
   }
 };
 
