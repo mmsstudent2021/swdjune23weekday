@@ -12,7 +12,7 @@ const createListUi = (text) => {
   const list = document.createElement("div");
   list.classList.add("tasklist");
   list.innerHTML = `
-    <div class="flex mb-5 justify-between items-center border-2 border-black p-5">
+    <div class=" animate__animated animate__fadeInUp  flex mb-5 justify-between items-center border-2 border-black p-5">
             <div class=" text-box flex  items-center">
               <input type="checkbox" class="w-5 h-5" />
               <div class="tasklist-text ms-2">
@@ -63,33 +63,38 @@ const createListUi = (text) => {
 
   // edit list
 
-  const tasklistEditBtn = list.querySelector(".tasklist-edit-btn");
-  tasklistEditBtn.addEventListener("click", () => {
-    const tasklistText = list.querySelector(".tasklist-text");
-
-    const input = document.createElement("input");
-    input.classList.add("border", "border-black", "p-1", "rounded");
-    input.value = tasklistText.innerText;
-
-    tasklistText.innerText = null;
-    tasklistText.append(input);
-
-    input.addEventListener("blur", () => {
-      tasklistText.innerText = input.value;
-    });
-  });
+  const taskListEditBtn = list.querySelector(".tasklist-edit-btn");
+  taskListEditBtn.addEventListener("click", listEditHandler);
 
   // checking
-
-  const textBox = list.querySelector(".text-box");
-  textBox.addEventListener("click", () => {
-    console.log("text-box");
-    textBox.querySelector("input").toggleAttribute("checked");
-    textBox.querySelector(".tasklist-text").classList.toggle("line-through");
-    countDoneTaskList();
-  });
+  const taskListCheckBox = list.querySelector("[type='checkbox']");
+  taskListCheckBox.addEventListener("click", listCheckHandler);
 
   return list;
+};
+
+const listCheckHandler = (event) => {
+  const list = event.target.closest(".tasklist");
+  const textBox = list.querySelector(".text-box");
+  // textBox.querySelector("input").toggleAttribute("checked");
+  textBox.querySelector(".tasklist-text").classList.toggle("line-through");
+  countDoneTaskList();
+};
+
+const listEditHandler = (event) => {
+  const list = event.target.closest(".tasklist");
+  const tasklistText = list.querySelector(".tasklist-text");
+
+  const input = document.createElement("input");
+  input.classList.add("border", "border-black", "p-1", "rounded");
+  input.value = tasklistText.innerText;
+
+  tasklistText.innerText = null;
+  tasklistText.append(input);
+
+  input.addEventListener("blur", () => {
+    tasklistText.innerText = input.value;
+  });
 };
 
 const listDelHandler = (event) => {
