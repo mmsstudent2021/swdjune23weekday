@@ -2556,6 +2556,10 @@ video {
   --tw-backdrop-sepia: 
 }
 
+.pointer-events-none{
+  pointer-events:none
+}
+
 .col-span-3{
   grid-column:span 3 / span 3
 }
@@ -2626,6 +2630,10 @@ video {
 
 .block{
   display:block
+}
+
+.inline-block{
+  display:inline-block
 }
 
 .flex{
@@ -2827,6 +2835,10 @@ video {
 
 .p-8{
   padding:2rem
+}
+
+.p-14{
+  padding:3.5rem
 }
 
 .px-3{

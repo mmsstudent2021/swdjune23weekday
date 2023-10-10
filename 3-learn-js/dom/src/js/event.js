@@ -66,14 +66,45 @@
 //     console.log("U click link");
 // })
 
-
 // window.addEventListener("scroll",() => {
 //     console.log("U scroll");
 //     console.log(window.scrollY);
 // })
 
+// document.addEventListener("mousemove",(event) => {
+//     console.clear();
+//     console.log(event);
+// })
 
-document.addEventListener("mousemove",(event) => {
-    console.clear();
-    console.log(event);
-})
+const btn = document.querySelector("#btn");
+const layer1 = document.querySelector("#layer1");
+const layer2 = document.querySelector("#layer2");
+const layer3 = document.querySelector("#layer3");
+
+
+layer1.addEventListener("click",() => {
+    console.log("U click layer 1");
+},false)
+
+layer2.addEventListener("click",() => {
+    console.log("U click layer 2");
+},false)
+
+layer3.addEventListener("click",() => {
+    console.log("U click layer 3");
+},false)
+
+btn.addEventListener("click",(event) => {
+    event.stopPropagation();
+    console.log("U click btn");
+},false)
+
+// const displayConsole = () => {
+//   console.log("hello Hello");
+// };
+// btn.addEventListener("click", displayConsole);
+
+// btn.addEventListener("click", () => {
+//     console.log("remove eventlistener");
+//   btn.removeEventListener("click", displayConsole);
+// });

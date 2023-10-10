@@ -149,7 +149,7 @@ const addBtnHandler = () => {
 
 // addBtn.onclick = addBtnHandler;
 addBtn.addEventListener("click", (event) => {
-  // console.log(event);
+  console.log(event.target);
   addBtnHandler();
 });
 // textInput.addEventListener("keydown",() => {
