@@ -2612,6 +2612,18 @@ video {
   margin-top:6rem
 }
 
+.mt-1{
+  margin-top:0.25rem
+}
+
+.mt-14{
+  margin-top:3.5rem
+}
+
+.mb-6{
+  margin-bottom:1.5rem
+}
+
 .block{
   display:block
 }
@@ -2873,8 +2885,16 @@ video {
   line-height:1.25rem
 }
 
+.text-\[14px\]{
+  font-size:14px
+}
+
 .font-bold{
   font-weight:700
+}
+
+.font-\[14px\]{
+  font-weight:14px
 }
 
 .text-red-500{
