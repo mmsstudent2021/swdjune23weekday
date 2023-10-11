@@ -76,28 +76,28 @@
 //     console.log(event);
 // })
 
-const btn = document.querySelector("#btn");
-const layer1 = document.querySelector("#layer1");
-const layer2 = document.querySelector("#layer2");
-const layer3 = document.querySelector("#layer3");
+// const btn = document.querySelector("#btn");
+// const layer1 = document.querySelector("#layer1");
+// const layer2 = document.querySelector("#layer2");
+// const layer3 = document.querySelector("#layer3");
 
 
-layer1.addEventListener("click",() => {
-    console.log("U click layer 1");
-},false)
+// layer1.addEventListener("click",() => {
+//     console.log("U click layer 1");
+// },false)
 
-layer2.addEventListener("click",() => {
-    console.log("U click layer 2");
-},false)
+// layer2.addEventListener("click",() => {
+//     console.log("U click layer 2");
+// },false)
 
-layer3.addEventListener("click",() => {
-    console.log("U click layer 3");
-},false)
+// layer3.addEventListener("click",() => {
+//     console.log("U click layer 3");
+// },false)
 
-btn.addEventListener("click",(event) => {
-    event.stopPropagation();
-    console.log("U click btn");
-},false)
+// btn.addEventListener("click",(event) => {
+//     event.stopPropagation();
+//     console.log("U click btn");
+// },false)
 
 // const displayConsole = () => {
 //   console.log("hello Hello");
@@ -108,3 +108,63 @@ btn.addEventListener("click",(event) => {
 //     console.log("remove eventlistener");
 //   btn.removeEventListener("click", displayConsole);
 // });
+
+
+// const ul = document.querySelector("ul");
+// const lis = document.querySelectorAll("li");
+
+// ul.addEventListener("click",(event) => {
+//     console.log(event.target.innerText);
+// })
+
+// const createLi = (text) => {
+//     const li = document.createElement("li");
+//     li.className = "border active:bg-neutral-400 p-2";
+//     li.innerText = text;
+//     return li;
+// }
+
+
+// lis.forEach((li) => {
+//     // console.log(li);
+//     li.addEventListener("click",() => {
+//         console.log(li.innerText);
+//     })
+// })
+
+// console.log(ul.children);
+// console.log(lis);
+
+// lis[0].addEventListener("click",() => {
+//     console.log(lis[0].innerText);
+// })
+
+// lis[1].addEventListener("click",() => {
+//     console.log(lis[1].innerText);
+// })
+
+// lis[2].addEventListener("click",() => {
+//     console.log(lis[2].innerText);
+// })
+
+
+
+const h1 = document.querySelector("h1");
+// h1.addEventListener("click",() => {
+//     console.log(h1.innerText);
+// })
+
+// h1.addEventListener("mouseover",() => {
+//     console.log(h1.innerText);
+// })
+
+// h1.addEventListener("mouseout",() => {
+//     console.log(h1.innerText);
+// })
+
+["click","mouseover","mouseout"].forEach((el) => {
+    h1.addEventListener(el,() => {
+        console.log(h1.innerText);
+    })
+})
+
