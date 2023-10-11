@@ -8,12 +8,12 @@
   </head>
   <body>
     <main id="app">
-      <header class="max-w-[550px] mx-auto py-3">
+      <header class="max-w-[550px] mx-auto py-3 mb-10">
         <h1 class="font-bold font-heading text-3xl">MMS Solutions</h1>
         <p class="text-neutral-500 font-body">Invoice App</p>
       </header>
       <div class="max-w-[550px] mx-auto">
-        <form action="">
+        <form class="mb-5" action="">
           <div class="grid gap-3 grid-cols-3">
             <select
               class="border border-neutral-600 w-full block p-3"
@@ -33,6 +33,46 @@
             </button>
           </div>
         </form>
+        <table class="w-full">
+          <thead class="bg-neutral-600 text-white">
+            <tr>
+              <th class="p-3">#</th>
+              <th class="p-3">Product</th>
+              <th class="p-3 text-end">Price</th>
+              <th class="p-3 text-end">Quantity</th>
+              <th class="p-3 text-end">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-neutral-200">
+              <td class="p-3">1</td>
+              <td class="p-3">Domain</td>
+              <td class="p-3 text-end">13</td>
+              <td class="p-3 text-end">1</td>
+              <td class="p-3 text-end">13</td>
+            </tr>
+            <tr class="border-b border-neutral-200">
+              <td class="p-3">2</td>
+              <td class="p-3">Hosting</td>
+              <td class="p-3 text-end">60</td>
+              <td class="p-3 text-end">1</td>
+              <td class="p-3 text-end">60</td>
+            </tr>
+            <tr class="border-b border-neutral-200">
+              <td class="p-3">3</td>
+              <td class="p-3">Design Package</td>
+              <td class="p-3 text-end">200</td>
+              <td class="p-3 text-end">1</td>
+              <td class="p-3 text-end">200</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="p-3 text-center bg-neutral-300" colspan="4">Total</td>
+              <td class="p-3 text-end bg-neutral-300">273</td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </main>
     <script src="./js/invoice.js"></script>
