@@ -8,23 +8,27 @@
   </head>
   <body>
     <main id="app">
-      <header class="max-w-[550px] mx-auto py-3 mb-10">
+      <header class="max-w-[400px] sm:max-w-[550px] mx-auto py-3 mb-10">
         <h1 class="font-bold font-heading text-3xl">MMS Solutions</h1>
         <p class="text-neutral-500 font-body">Invoice App</p>
       </header>
-      <div class="max-w-[550px] mx-auto">
+      <div class="max-w-[400px] sm:max-w-[550px] mx-auto">
         <form id="addRecord" class="mb-5" action="">
           <div class="grid gap-3 grid-cols-3">
             <select
-              class="border border-neutral-600 w-full block p-3"
+              class="col-span-3 md:col-span-1 border border-neutral-600 w-full block p-3"
               name="product_id"
               id=""
+              required
             >
               <option value="domain">Select Product</option>
             </select>
             <input
-              class="border border-neutral-600 w-full block p-3"
-              type="number" name="quantity" placeholder="Quantity"
+              class="col-span-2 md:col-span-1 border border-neutral-600 w-full block p-3"
+              type="number"
+              name="quantity"
+              placeholder="Quantity"
+              required
             />
             <button
               class="border border-neutral-600 bg-neutral-600 text-white w-full block p-3"
@@ -33,7 +37,7 @@
             </button>
           </div>
         </form>
-        <table class="w-full">
+        <table class="w-full mb-5">
           <thead class="bg-neutral-600 text-white">
             <tr>
               <th class="p-3">#</th>
@@ -45,19 +49,54 @@
           </thead>
           <tbody id="recordList">
             <tr class="hidden last:table-row">
-                <td class="text-center p-3" colspan="5">
-                    There is no record
-                </td>
+              <td class="text-center p-3" colspan="5">There is no record</td>
             </tr>
-            
           </tbody>
           <tfoot>
             <tr>
-              <td class="p-3 text-center bg-neutral-300" colspan="4">Total</td>
-              <td id="costTotal" class="p-3 text-end bg-neutral-300 ">0</td>
+              <td class="p-3 bg-neutral-300 text-end" colspan="4">Total</td>
+              <td id="costTotal" class="p-3 text-end bg-neutral-300">0</td>
             </tr>
           </tfoot>
         </table>
+
+        <div
+          id="manageProductBox"
+          class="fixed w-96 h-screen bg-gray-200 top-0 right-0 z-50 flex justify-center items-center duration-300 translate-x-full"
+        >
+          <p>Manage Product</p>
+          <button id="closeManageProductBox" class="border border-neutral-500 p-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex justify-end gap-3">
+          <button
+            id="manageProduct"
+            class="border border-neutral-600 text-neutral-600 px-3 py-2"
+          >
+            Manage Product
+          </button>
+          <button
+          
+            class="border border-neutral-600 bg-neutral-600 text-white px-3 py-2"
+          >
+            Print
+          </button>
+        </div>
       </div>
     </main>
     <script src="./js/invoice.js"></script>
