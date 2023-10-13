@@ -32,6 +32,9 @@ const costTotal = app.querySelector("#costTotal");
 const manageProduct = app.querySelector("#manageProduct");
 const manageProductBox = app.querySelector("#manageProductBox");
 const closeManageProductBox = app.querySelector("#closeManageProductBox");
+const serviceList = app.querySelector("#serviceList");
+const addService = app.querySelector("#addService");
+const print = app.querySelector("#print");
 
 // function
 const createOption = (content, value) => {
@@ -39,6 +42,19 @@ const createOption = (content, value) => {
   option.innerText = content;
   option.value = value;
   return option;
+};
+
+const createService = (id, name, price) => {
+  const service = document.createElement("div");
+  service.innerHTML = `
+  <div class="border-2 flex justify-between p-3 mb-3">
+    <p class=" text-lg font-bold">${name}</p>
+    <p>
+      $<span>${price}</span>
+    </p>
+  </div>
+  `;
+  return service;
 };
 
 const createRecordRow = (id, productName, productPrice, quantity) => {
@@ -129,11 +145,59 @@ const recordTotal = () => {
 
 // handlers
 
+const printHandler = () => {
+  // ??
+  const rows = app.querySelectorAll(".record-row");
+  const recordData = [...rows].map(row => {
+    return {
+      serviceId : parseInt(row.getAttribute("product-id")),
+      quantity : parseInt(row.querySelector(".record-row-q").innerText),
+      cost : parseFloat(row.querySelector(".record-row-cost").innerText),
+    }
+  })
+
+  console.log({
+    customer_name : "kyaw kyaw",
+    timestamp : Date.now() ,
+    total : parseFloat(costTotal.innerText) ,
+    recordData
+  });
+
+  window.print();
+
+  rows.forEach(row => row.remove());
+  costTotal.innerText = 0;
+  
+}
+
+const addServiceHandler = (event) => {
+  event.preventDefault();
+  const formData = new FormData(addService);
+  const newId = products[products.length - 1].id + 1;
+  const newService = {
+    id: newId,
+    name: formData.get("service_name"),
+    price: formData.get("service_price"),
+  };
+  // data update
+  products.push(newService);
+  // ui update
+  serviceList.append(
+    createService(
+      newId,
+      formData.get("service_name"),
+      formData.get("service_price")
+    )
+  );
+  productSelect.append(new Option(formData.get("service_name"),newId));
+  addService.reset()
+};
+
 const manageProductHandler = () => {
   console.log("hello");
   manageProductBox.classList.toggle("translate-x-full");
   // manageProductBox.classList.add("duration-300")
-}
+};
 
 const recordRowQuantityIncrement = (productId, quantity = 1) => {
   const currentRecordRow = app.querySelector(`[product-id='${productId}']`);
@@ -191,9 +255,10 @@ const addRecordHandler = (event) => {
 };
 
 // render
-products.forEach(({ name, id }) => {
+products.forEach(({ name, id, price }) => {
   // productSelect.append(createOption(product.name,product.id))
   productSelect.append(new Option(name, id));
+  serviceList.append(createService(id, name, price));
 });
 
 // listener
@@ -208,5 +273,7 @@ recordList.addEventListener("click", (event) => {
   }
 });
 
-manageProduct.addEventListener("click",manageProductHandler);
-closeManageProductBox.addEventListener("click",manageProductHandler)
+manageProduct.addEventListener("click", manageProductHandler);
+closeManageProductBox.addEventListener("click", manageProductHandler);
+addService.addEventListener("submit", addServiceHandler);
+print.addEventListener("click",printHandler);
