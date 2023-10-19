@@ -18,12 +18,12 @@
 
 // window.print()
 
-console.log(window); // BOM
+// console.log(window); // BOM
 
-console.dir(document);
+// console.dir(document);
 
-console.log(console);
+// console.log(console);
 
-console.clear()
+// console.clear()
 
-console.log("hello");
+// console.log("hello");
