@@ -1,5 +1,6 @@
+import Swal from "sweetalert2";
 import { products } from "../core/data";
-import { app } from "../core/selectors";
+import { app, recordList } from "../core/selectors";
 
 export const createRecordRow = (id, productName, productPrice, quantity) => {
   const recordRow = document.createElement("tr");
@@ -102,7 +103,6 @@ export const addRecordHandler = (event) => {
     recordList.append(
       createRecordRow(id, name, price, formData.get("quantity"))
     );
-    recordTotal();
   }
   addRecord.reset();
 };
@@ -118,15 +118,44 @@ export const recordRowQuantityIncrement = (productId, quantity = 1) => {
     parseInt(currentRecordQuantity.innerText) + parseInt(quantity);
   currentRecordRowCost.innerText =
     currentRecordQuantity.innerText * currentRecordRowPrice.innerText;
-  recordTotal();
 };
 
 export const recordRowDelHandler = (event) => {
   const recordRow = event.target.closest(".record-row");
-  if (confirm("Are U sure to delete?")) {
-    recordRow.remove();
-    recordTotal();
-  }
+
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "question",
+    showCancelButton: true,
+
+    confirmButtonText: "Confirm",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      recordRow.remove();
+      // Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+
+      Toast.fire({
+        icon: "success",
+        title: "Row deleted successful ...",
+      });
+    }
+  });
+
+  // if (confirm("Are U sure to delete?")) {
+  //   recordRow.remove();
+  // }
 };
 
 export const recordTotal = () => {
@@ -134,4 +163,20 @@ export const recordTotal = () => {
     (pv, cv) => pv + parseFloat(cv.innerText),
     0
   );
+};
+
+export const recordObserver = () => {
+  const processes = () => {
+    console.log("U change in record list");
+    recordTotal();
+  };
+
+  const options = {
+    childList: true,
+    subtree: true,
+  };
+
+  const observer = new MutationObserver(processes);
+
+  observer.observe(recordList, options);
 };

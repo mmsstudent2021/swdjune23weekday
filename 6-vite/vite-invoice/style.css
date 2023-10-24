@@ -1,13 +1,26 @@
+@import url("./node_modules/sweetalert2/dist/sweetalert2.min.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 body {
   counter-reset: row;
 }
 
-.record-row td:first-child::before{
+.record-row td:first-child::before {
   counter-increment: row;
-  content : counter(row) ;
+  content: counter(row);
+}
+
+.swal2-popup {
+  @apply border-0 rounded-none !important;
+}
+
+.swal2-confirm {
+  @apply border-0 rounded-none bg-neutral-600 !important;
+}
+
+.swal2-cancel {
+  @apply border-0 rounded-none bg-neutral-300 text-neutral-600 !important;
 }

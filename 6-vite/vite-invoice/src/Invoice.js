@@ -1,5 +1,5 @@
 import { productRender } from "./app/product";
-import { addRecordHandler } from "./app/record";
+import { addRecordHandler, recordObserver } from "./app/record";
 import { addServiceHandler } from "./app/service";
 import { manageProductHandler, printHandler, recordListHandler } from "./core/handlers";
 import { addRecord, addService, closeManageProductBox, manageProduct, print, recordList } from "./core/selectors";
@@ -21,10 +21,16 @@ class Invoice {
         print.addEventListener("click",printHandler)
     }
 
+    observer(){
+        recordObserver()
+    }
+
     init(){
         console.log("Invoice App Start");
+        this.observer()
         this.initialRender()
         this.listener()
+
     }
 
 }
