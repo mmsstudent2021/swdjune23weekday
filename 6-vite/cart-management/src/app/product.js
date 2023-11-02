@@ -1,5 +1,6 @@
 import { products } from "../core/data";
-import { productCard, productList } from "../core/selectors";
+import { cartBody, productCard, productList } from "../core/selectors";
+import { addToCart, createCartItem } from "./cart";
 
 export const productRender = (productArray) => {
   productArray.forEach((el) => productList.append(createProductCard(el)));
@@ -71,9 +72,16 @@ export const productListHandler = (event) => {
   if (event.target.classList.contains("add-to-cart")) {
     const currentProductCard = event.target.closest(".product-card");
     const currentProductId = currentProductCard.getAttribute("product-id");
-    const currentProduct = products.find(el => el.id == currentProductId);
-    console.log(currentProductCard);
-    console.log(currentProductId);
-    console.log(currentProduct);
+
+    const currentAddToCartBtn = currentProductCard.querySelector(".add-to-cart");
+    // console.log(currentProductCard);
+    // console.log(currentProductId);
+
+    addToCart(currentProductId);
+
+    currentAddToCartBtn.classList.add("bg-neutral-600","text-white")
+    currentAddToCartBtn.innerText = "Added"
+    currentAddToCartBtn.disabled = true
+    
   }
 };
