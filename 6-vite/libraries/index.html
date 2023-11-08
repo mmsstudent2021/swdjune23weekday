@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body class="h-[500vh]">
+    <div id="app" class="p-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="col-span-1">
+          <div class="mb-10">
+            <h1 class="text-4xl font-serif mb-5 underline">Slide Show</h1>
+            <div class="glide">
+              <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                  <li class="glide__slide">
+                    <img
+                      class="w-full h-96 object-cover"
+                      src="./public/images/poe-mamhe-thar-2.jpg"
+                      alt=""
+                    />
+                  </li>
+                  <li class="glide__slide">
+                    <img
+                      class="w-full h-96 object-cover"
+                      src="./public/images/poe-mamhe-thar-3.jpg"
+                      alt=""
+                    />
+                  </li>
+                  <li class="glide__slide">
+                    <img
+                      class="w-full h-96 object-cover"
+                      src="./public/images/poe-mamhe-thar-6.jpg"
+                      alt=""
+                    />
+                  </li>
+                  <li class="glide__slide">
+                    <img
+                      class="w-full h-96 object-cover"
+                      src="./public/images/poe-mamhe-thar-7.jpg"
+                      alt=""
+                    />
+                  </li>
+                  <li class="glide__slide">
+                    <img
+                      class="w-full h-96 object-cover"
+                      src="./public/images/poe-mamhe-thar-8.jpg"
+                      alt=""
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="glide__arrows" data-glide-el="controls">
+                <button
+                  class="glide__arrow glide__arrow--left"
+                  data-glide-dir="<"
+                >
+                  prev
+                </button>
+                <button
+                  class="glide__arrow glide__arrow--right"
+                  data-glide-dir=">"
+                >
+                  next
+                </button>
+              </div>
+
+              <div class="glide__bullets" data-glide-el="controls[nav]">
+                <button class="glide__bullet" data-glide-dir="=0"></button>
+                <button class="glide__bullet" data-glide-dir="=1"></button>
+                <button class="glide__bullet" data-glide-dir="=2"></button>
+                <button class="glide__bullet" data-glide-dir="=3"></button>
+                <button class="glide__bullet" data-glide-dir="=4"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-1">
+          <div class="">
+            <h1 class="text-4xl font-serif mb-5 underline">Light box</h1>
+            <div class="grid grid-cols-4 gap-4">
+              <a
+                data-gall="poe"
+                class="my-link"
+                href="./public/images/poe-mamhe-thar-2.jpg"
+              >
+                <img
+                  class="w-full aspect-square object-cover"
+                  src="./public/images/poe-mamhe-thar-2.jpg"
+                  alt="image alt"
+                />
+              </a>
+              <a
+                data-gall="poe"
+                class="my-link"
+                href="./public/images/poe-mamhe-thar-3.jpg"
+              >
+                <img
+                  class="w-full aspect-square object-cover"
+                  src="./public/images/poe-mamhe-thar-3.jpg"
+                  alt="image alt"
+                />
+              </a>
+              <a
+                data-gall="poe"
+                class="my-link col-span-2 row-span-2"
+                href="./public/images/poe-mamhe-thar-6.jpg"
+              >
+                <img
+                  class="w-full aspect-square object-cover"
+                  src="./public/images/poe-mamhe-thar-6.jpg"
+                  alt="image alt"
+                />
+              </a>
+              <a
+                data-gall="poe"
+                class="my-link"
+                href="./public/images/poe-mamhe-thar-7.jpg"
+              >
+                <img
+                  class="w-full aspect-square object-cover"
+                  src="./public/images/poe-mamhe-thar-7.jpg"
+                  alt="image alt"
+                />
+              </a>
+              <a
+                data-gall="poe"
+                class="my-link"
+                href="./public/images/poe-mamhe-thar-8.jpg"
+              >
+                <img
+                  class="w-full aspect-square object-cover"
+                  src="./public/images/poe-mamhe-thar-8.jpg"
+                  alt="image alt"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-1">
+          <div class="">
+            <h1 class="text-4xl font-serif mb-5 underline">Flowbite</h1>
+
+            <!-- <div class="mb-6">
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Your email</label
+              >
+              <input
+                type="email"
+                id="email"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="name@flowbite.com"
+                required
+              />
+            </div>
+             -->
+
+            <!-- <button
+              id="dropdownDefaultButton"
+              data-dropdown-toggle="dropdown"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              type="button"
+            >
+              Menu
+              <svg
+                class="w-2.5 h-2.5 ml-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button> -->
+
+            <!-- Dropdown menu -->
+            <!-- <div
+              id="dropdown"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+            >
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownDefaultButton"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Settings</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Google</a
+                  >
+                </li>
+                
+              </ul>
+            </div> -->
+
+            <!-- drawer init and toggle -->
+            <!-- <div class="text-center">
+              <button
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                type="button"
+                data-drawer-target="drawer-example"
+                data-drawer-show="drawer-example"
+                aria-controls="drawer-example"
+              >
+                Show drawer
+              </button>
+            </div> -->
+
+            <button
+              type="button"
+              id="openDrawer"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            >
+              Open Drawer
+            </button>
+
+            <!-- drawer component -->
+            <div
+              id="drawer-example"
+              class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
+              tabindex="-1"
+              aria-labelledby="drawer-label"
+            >
+              <h5
+                id="drawer-label"
+                class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"
+              >
+                <svg
+                  class="w-4 h-4 mr-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                  />
+                </svg>
+                Info
+              </h5>
+              <button
+                type="button"
+                data-drawer-hide="drawer-example"
+                aria-controls="drawer-example"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                <svg
+                  class="w-3 h-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+                <span class="sr-only">Close menu</span>
+              </button>
+              <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+                Supercharge your hiring by taking advantage of our
+                <a
+                  href="#"
+                  class="text-blue-600 underline dark:text-blue-500 hover:no-underline"
+                  >limited-time sale</a
+                >
+                for Flowbite Docs + Job Board. Unlimited access to over 190K
+                top-ranked candidates and the #1 design job board.
+              </p>
+              <div class="grid grid-cols-2 gap-4">
+                <a
+                  href="#"
+                  class="px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                  >Learn more</a
+                >
+                <a
+                  href="#"
+                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                  >Get access
+                  <svg
+                    class="w-3.5 h-3.5 ml-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <button
+              data-tooltip-target="tooltip-default"
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              HHZ
+            </button>
+            <div
+              id="tooltip-default"
+              role="tooltip"
+              class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+            >
+              Hein Htet Zan
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

@@ -1,23 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cart Management App</title>
   </head>
   <body class="text-neutral-900">
-    <main id="app">
+    <main id="app" class="flex flex-col min-h-screen">
       <header class="border-b-2 z-40 fixed w-full bg-white border-neutral-600">
         <div class="container">
           <div class="flex justify-between items-center py-3">
             <div class="brand">
               <h1 class="font-heading font-bold text-2xl">MMS Solutions</h1>
-              <p class="text-neutral-500">E-commerce App</p>
+              <p class="text-neutral-500">E-commerce App by Hein Htet Zan</p>
             </div>
             <div class="control-btn flex gap-2">
+              <div
+                id="searchBar"
+                class="border border-neutral-600 h-12 w-60 flex gap-3 px-2 items-center opacity-0 -translate-y-full"
+              >
+                <input
+                  id="searchBarInput"
+                  type="text"
+                  class="flex-grow focus-visible:outline-none"
+                />
+                <button id="clearSearchBarInput">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 stroke-1"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.211-.211.498-.33.796-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-9.284c-.298 0-.585-.119-.796-.33z"
+                    />
+                  </svg>
+                </button>
+              </div>
               <button
-                class="border border-neutral-600 h-12 w-12 flex justify-center items-center"
-                id="search"
+                class="border border-neutral-600 duration-100 active:scale-90 h-12 w-12 flex justify-center items-center"
+                id="searchBtn"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -35,10 +61,14 @@
                 </svg>
               </button>
               <button
-                class="border border-neutral-600 bg-neutral-600 text-neutral-200 h-12 w-12 flex justify-center items-center relative"
+                class="border duration-100 active:scale-90 border-neutral-600 bg-neutral-600 text-neutral-200 h-12 w-12 flex justify-center items-center animate__animated relative"
                 id="cartBtn"
               >
-                <span id="cartCountBadge" class=" absolute bg-red-500 text-white flex justify-center items-center text-xs w-6 h-6 top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white">0</span>
+                <span
+                  id="cartCountBadge"
+                  class="absolute bg-red-500 text-white flex justify-center items-center text-xs w-6 h-6 top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white"
+                  >0</span
+                >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -58,7 +88,7 @@
           </div>
         </div>
       </header>
-      <div class="header-spcer h-24"></div>
+      <div id="headerSpacer" class="header-spcer h-24"></div>
       <section
         class="cart-box translate-x-full flex flex-col border-s-2 border-neutral-600 fixed w-96 h-screen bg-white top-0 right-0 z-50"
         id="cartBox"
@@ -69,12 +99,16 @@
               <h1 class="font-heading font-bold text-2xl">Your Items</h1>
               <p class="text-neutral-500">
                 Product in Cart
-                <span id="cartBodyCount" class="text-xs w-4 h-4 bg-red-500 inline-flex justify-center items-center text-white">0</span>
+                <span
+                  id="cartBodyCount"
+                  class="text-xs w-4 h-4 bg-red-500 inline-flex justify-center items-center text-white"
+                  >0</span
+                >
               </p>
             </div>
             <div class="control-btn flex gap-2">
               <button
-                class="border border-neutral-600 h-12 w-12 flex justify-center items-center"
+                class="border duration-100 active:scale-90 border-neutral-600 h-12 w-12 flex justify-center items-center"
                 id="cartCloseBtn"
               >
                 <svg
@@ -107,7 +141,9 @@
           <div class="flex flex-col justify-start py-3">
             <div class="text-end">
               <p class="text-neutral-500">Total Cost</p>
-              <h1 class="font-heading font-bold text-2xl">$ <span id="cartCostTotal">0</span></h1>
+              <h1 class="font-heading font-bold text-2xl">
+                $ <span id="cartCostTotal">0</span>
+              </h1>
             </div>
             <button
               class="border border-neutral-600 bg-neutral-600 text-white font-heading h-12 w-full flex justify-center items-center"
@@ -120,8 +156,8 @@
       </section>
       <section class="category-list mb-10 py-3">
         <div class="container">
-          <p class="font-heading mb-2">Product Categories</p>
-          <div id="categoryList" class="flex gap-3 overflow-scroll">
+          <p class="font-heading mb-2">Select Categories</p>
+          <div id="categoryList" class="flex gap-3 select-none overflow-scroll">
             <button
               class="category-btn active border border-neutral-600 px-4 py-1"
             >
@@ -130,7 +166,7 @@
           </div>
         </div>
       </section>
-      <section class="product-list">
+      <section class="product-list mb-10">
         <div class="container">
           <div
             id="productList"
@@ -138,14 +174,15 @@
           ></div>
         </div>
       </section>
-      <footer class="mt-10 bg-neutral-600 py-5 text-white">
+      <footer class="mt-auto bg-neutral-600 py-5 text-white">
         <div class="container">
           <div class="flex justify-between items-center">
             <p class="font-heading">
               Copy Right &copy;
               <a class="text-neutral-300" href="https://mms-it.com">MMS IT</a>
             </p>
-            <button
+            <a
+              href="#headerSpacer"
               class="border border-neutral-200 h-12 w-12 flex justify-center items-center"
             >
               <svg
@@ -162,7 +199,7 @@
                   d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
                 />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
       </footer>
@@ -202,7 +239,7 @@
               $ <span class="price">104</span>
             </p>
             <button
-              class="add-to-cart border border-neutral-600 block w-full h-12 font-heading"
+              class="add-to-cart duration-100 active:scale-90 border border-neutral-600 block w-full h-12 font-heading"
             >
               Add to Cart
             </button>
@@ -217,7 +254,7 @@
               src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
               alt=""
             />
-            <div class="border border-neutral-600 p-3 relative">
+            <div class="border bg-white border-neutral-600 p-3 relative">
               <button
                 class="cart-item-del bg-red-100 text-red-600 p-1 duration-200 absolute pointer-events-none top-3 -right-3 opacity-0 group-hover:opacity-100 group-hover:right-3 group-hover:pointer-events-auto"
               >
@@ -244,17 +281,20 @@
               </p>
               <div class="flex justify-between">
                 <p class="text-neutral-500">
-                  $ <span class="cart-item-price">109.55</span>
+                  $ <span class="cart-item-price hidden">109.55</span>
+                  <span class="cart-item-cost">109.55</span>
                 </p>
                 <div class="flex">
-                  <button class="bg-neutral-300 p-1">
+                  <button
+                    class="bg-neutral-300 duration-100 active:scale-90 cart-item-quantity-decrement p-1"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke-width="1.5"
                       stroke="currentColor"
-                      class="w-4 h-4"
+                      class="w-4 h-4 pointer-events-none"
                     >
                       <path
                         stroke-linecap="round"
@@ -269,14 +309,16 @@
                     1
                   </p>
 
-                  <button class="bg-neutral-300 p-1">
+                  <button
+                    class="bg-neutral-300 duration-100 active:scale-90 cart-item-quantity-increment p-1"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke-width="1.5"
                       stroke="currentColor"
-                      class="w-4 h-4"
+                      class="w-4 h-4 pointer-events-none"
                     >
                       <path
                         stroke-linecap="round"

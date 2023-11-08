@@ -1,0 +1,8 @@
+@import url("./node_modules/@glidejs/glide/dist/css/glide.core.min.css");
+@import url("./node_modules/@glidejs/glide/dist/css/glide.theme.min.css");
+@import url("./node_modules/venobox/dist/venobox.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+

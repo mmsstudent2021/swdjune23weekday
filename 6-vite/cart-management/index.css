@@ -2,6 +2,8 @@
 
 @import url("./node_modules/sweetalert2/dist/sweetalert2.min.css");
 
+@import url("./node_modules/animate.css/animate.min.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

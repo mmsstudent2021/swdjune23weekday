@@ -1,8 +1,16 @@
 import { products } from "../core/data";
-import { cartBody, productCard, productList } from "../core/selectors";
+import {
+  app,
+  cartBody,
+  cartBox,
+  cartBtn,
+  productCard,
+  productList,
+} from "../core/selectors";
 import { addToCart, createCartItem } from "./cart";
 
 export const productRender = (productArray) => {
+  productList.innerHTML = "";
   productArray.forEach((el) => productList.append(createProductCard(el)));
 };
 
@@ -63,7 +71,14 @@ export const createProductCard = ({
   productCardRating.innerText = `(${rate} / ${count})`;
   productCardRatingStars.innerHTML = stars(rate);
 
-  addToCartBtn.addEventListener("click", () => {});
+  const isExitInCart = cartBody.querySelector(`[cart-product-id='${id}']`);
+  // console.log(isExitInCart);
+
+  if (isExitInCart) {
+    addToCartBtn.classList.add("bg-neutral-600", "text-white");
+    addToCartBtn.innerText = "Added";
+    addToCartBtn.disabled = true;
+  }
 
   return productCardUi;
 };
@@ -73,15 +88,85 @@ export const productListHandler = (event) => {
     const currentProductCard = event.target.closest(".product-card");
     const currentProductId = currentProductCard.getAttribute("product-id");
 
-    const currentAddToCartBtn = currentProductCard.querySelector(".add-to-cart");
+    const currentAddToCartBtn =
+      currentProductCard.querySelector(".add-to-cart");
     // console.log(currentProductCard);
     // console.log(currentProductId);
 
-    addToCart(currentProductId);
+    const currentImg = currentProductCard.querySelector(".product-card-img");
+    const currentImgPosition = currentImg.getBoundingClientRect();
+    const cartBtnPosition = cartBtn.getBoundingClientRect();
+    // console.log(cartBtnPosition);
 
-    currentAddToCartBtn.classList.add("bg-neutral-600","text-white")
-    currentAddToCartBtn.innerText = "Added"
-    currentAddToCartBtn.disabled = true
-    
+    const img = new Image();
+    img.src = currentImg.src;
+    img.classList.add(`fixed`, `h-32`, `z-50`);
+    img.style.top = currentImgPosition.top + "px";
+    img.style.left = currentImgPosition.top + "px";
+
+    let keyframe;
+
+    if (cartBox.classList.contains("translate-x-full")) {
+      keyframe = [
+        {
+          top: currentImgPosition.top + "px",
+          left: currentImgPosition.left + "px",
+        },
+        {
+          top: cartBtnPosition.top + 10 + "px",
+          left: cartBtnPosition.left + 10 + "px",
+          height: 10 + "px",
+          rotate: "2turn",
+        },
+      ];
+    } else {
+      const lastCartPosition = document
+        .querySelector(".cart-item:last-child")
+        ?.getBoundingClientRect();
+
+      const aniLeft = lastCartPosition
+        ? lastCartPosition.left + 10
+        : cartBody.getBoundingClientRect().left;
+      const aniTop = lastCartPosition
+        ? lastCartPosition.bottom + 10
+        : cartBody.getBoundingClientRect().top;
+
+      keyframe = [
+        {
+          top: currentImgPosition.top + "px",
+          left: currentImgPosition.left + "px",
+        },
+        {
+          top: aniTop + "px",
+          left: aniLeft + "px",
+          height: 10 + "px",
+          rotate: "2turn",
+        },
+      ];
+    }
+
+    const options = {
+      duration: 500,
+      iterations: 1,
+      fill: "both",
+    };
+
+    const imgAnimation = img.animate(keyframe, options);
+
+    imgAnimation.addEventListener("finish", () => {
+      addToCart(currentProductId);
+
+      img.remove();
+      cartBtn.classList.add("animate__tada");
+      cartBtn.addEventListener("animationend", () => {
+        cartBtn.classList.remove("animate__tada");
+      });
+    });
+
+    app.append(img);
+
+    currentAddToCartBtn.classList.add("bg-neutral-600", "text-white");
+    currentAddToCartBtn.innerText = "Added";
+    currentAddToCartBtn.disabled = true;
   }
 };

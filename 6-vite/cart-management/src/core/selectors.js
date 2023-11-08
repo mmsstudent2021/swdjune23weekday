@@ -1,4 +1,8 @@
 export const app = document.querySelector("#app");
+export const searchBtn = app.querySelector("#searchBtn");
+export const searchBarInput = app.querySelector("#searchBarInput");
+export const clearSearchBarInput = app.querySelector("#clearSearchBarInput");
+export const searchBar = app.querySelector("#searchBar");
 export const cartBtn = app.querySelector("#cartBtn");
 export const cartCloseBtn = app.querySelector("#cartCloseBtn");
 export const cartBox = app.querySelector("#cartBox");
