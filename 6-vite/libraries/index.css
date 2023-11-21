@@ -1,8 +1,15 @@
 @import url("./node_modules/@glidejs/glide/dist/css/glide.core.min.css");
 @import url("./node_modules/@glidejs/glide/dist/css/glide.theme.min.css");
 @import url("./node_modules/venobox/dist/venobox.min.css");
+@import url("./node_modules/animate.css/animate.min.css");
+@import url("./node_modules/aos/dist/aos.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Cursor */
+.typed-cursor {
+    @apply text-3xl text-blue-600;
+}
 

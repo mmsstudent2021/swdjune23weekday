@@ -4,6 +4,15 @@ import Glide from "@glidejs/glide";
 import VenoBox from "venobox"
 import 'flowbite';
 import { Drawer } from "flowbite";
+import Typed from "typed.js";
+import Aos from "aos";
+
+import WOW from "wow.js"
+
+new WOW({
+  boxClass : "wow",
+  animateClass : "animate__animated"
+}).init()
 
 const glideOptions = {
   type: "carousel",
@@ -44,3 +53,22 @@ const openDrawerHandler = () => {
 }
 
 openDrawer.addEventListener("click",openDrawerHandler);
+
+
+const typed = new Typed("#element",{
+  strings : ["My name is <u>Hein Htet zan</u>","I'm web Developer"],
+  typeSpeed: 50,
+  startDelay: 1000,
+  backSpeed: 10,
+  backDelay: 3000,
+  loop: true,
+  loopCount: Infinity,
+});
+
+Aos.init({
+  // delay : 1000,
+  duration: 1000,
+  offset:200,
+  once : true
+})
+

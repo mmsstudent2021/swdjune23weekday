@@ -16,7 +16,13 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
+    "chart.js": "^4.4.0",
     "flowbite": "^2.0.0",
-    "venobox": "^2.0.4"
+    "typed.js": "^2.1.0",
+    "venobox": "^2.0.4",
+    "waypoints": "^4.0.1",
+    "wow.js": "^1.2.2"
   }
 }
