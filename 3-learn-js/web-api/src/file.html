@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
+  <body>
+    <div class="max-w-[700px] mx-auto m-10">
+
+        <h1 class=" mb-10 text-4xl font-serif font-bold underline">Upload Ui</h1>
+
+        <div id="uploaderUi" class="h-48 mb-10 border-4 border-dashed p-5 rounded-xl duration-200 active:scale-95 cursor-pointer">
+            <div class="flex h-full flex-col justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 stroke-gray-600 stroke-1">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                  </svg>
+
+                  <p class="text-gray-600 select-none">Click to Upload</p>
+                  
+            </div>
+        </div>
+
+      <input type="file" id="fileInput" class="hidden" />
+      <!-- <button class="bg-gray-900 text-white px-3 py-1" id="uploadBtn">Upload</button> -->
+
+      <div id="output" class=" grid grid-cols-4 gap-3"></div>
+
+      <script src="./js/upload.js"></script>
+    </div>
+  </body>
+</html>

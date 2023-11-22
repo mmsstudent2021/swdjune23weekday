@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="output"></h1>
+
+    <button id="bt">Show Battery Level</button>
+
+    <script>
+      const bt = document.querySelector("#bt");
+      const output = document.querySelector("#output");
+
+      bt.addEventListener("click", () => {
+        navigator.getBattery().then((btm) => {
+          console.log(btm);
+          output.innerText = btm.level * 100 + "%";
+
+          btm.addEventListener("levelchange", () => {
+            output.innerText = btm.level * 100 + "%";
+          });
+        });
+      });
+
+      // console.log(navigator);
+
+      // console.log(location);
+      // console.log(location.protocol);
+      // console.log(location.hostname);
+      // console.log(location.port);
+      // console.log(location.pathname);
+      // console.log(location.search);
+      // console.log(location.search);
+    </script>
+  </body>
+</html>

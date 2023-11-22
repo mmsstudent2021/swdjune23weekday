@@ -64,29 +64,31 @@
 //     clearInterval(runner)
 // })
 
-const openGoogle = document.querySelector("#openGoogle");
-const closeGoogle = document.querySelector("#closeGoogle");
-const scrollBtn = document.querySelector("#scrollBtn");
-const here = document.querySelector("#here");
+// const openGoogle = document.querySelector("#openGoogle");
+// const closeGoogle = document.querySelector("#closeGoogle");
+// const scrollBtn = document.querySelector("#scrollBtn");
+// const here = document.querySelector("#here");
 
-// console.log(here.style.color);
-// console.log(here.style.backgroundColor);
+// // console.log(here.style.color);
+// // console.log(here.style.backgroundColor);
 
-console.log(window.getComputedStyle(here).color);
-console.log(window.getComputedStyle(here).backgroundColor);
+// console.log(window.getComputedStyle(here).color);
+// console.log(window.getComputedStyle(here).backgroundColor);
 
-openGoogle.addEventListener("click",() => {
-    console.log("open");
-    window.open("https://google.com","_blank")
-})
+// openGoogle.addEventListener("click",() => {
+//     console.log("open");
+//     window.open("https://google.com","_blank")
+// })
 
-closeGoogle.addEventListener("click",() => {
-    window.close()
-})
+// closeGoogle.addEventListener("click",() => {
+//     window.close()
+// })
 
-scrollBtn.addEventListener("click",() => {
-    // console.log("resize");
-    // window.resizeTo(500,500)
-    // window.scrollTo(0, here.offsetTop);
-    // console.log(here.offsetTop);
-})
+// scrollBtn.addEventListener("click",() => {
+//     // console.log("resize");
+//     // window.resizeTo(500,500)
+//     // window.scrollTo(0, here.offsetTop);
+//     // console.log(here.offsetTop);
+// })
+
+// console.log(window.screen);
