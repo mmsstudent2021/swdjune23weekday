@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
+  <body class="p-10">
+    <div class="max-w-[700px] mx-auto">
+      <h1 class="font-serif mb-10 text-4xl font-bold underline">Speech Api</h1>
+
+      <textarea
+        id="textInput"
+        class="border p-5 mb-5 leading-8 rounded-xl border-black w-full"
+        rows="5"
+      ></textarea>
+
+      <div class="flex justify-between items-center px-5">
+        <button
+          id="speechBtn"
+          class="bg-black text-white rounded-full px-4 py-2"
+        >
+          Speech Now
+        </button>
+        <button id="micBtn" class="group flex items-center gap-1">
+          <div
+            id="micLoader"
+            class="w-4 h-4 hidden border-2 border-gray-200 border-l-gray-900 rounded-full animate-spin"
+          ></div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 duration-200 group-active:scale-75"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/tts.js"></script>
+  </body>
+</html>
