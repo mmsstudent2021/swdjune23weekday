@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Todo App</h1>
+      <div>
+        <input type="text" id="textInput" />
+        <button id="addBtn">Add</button>
+      </div>
+      <ul id="listGroup"></ul>
+
+      <template id="listUi">
+        <li>
+          <button class="list-del">Del</button>
+          <span class="list-text"></span>
+        </li>
+      </template>
+    </main>
+
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
