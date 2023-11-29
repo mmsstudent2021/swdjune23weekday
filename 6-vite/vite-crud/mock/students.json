@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "kyaw kyaw",
+    "phone": "0923423521",
+    "batch": "SWD June Weekday",
+    "course": "SWD"
+  },
+  {
+    "id": 3,
+    "name": "Su Su",
+    "phone": "092362885",
+    "batch": "SWD June Weekend",
+    "course": "SWD"
+  },
+  {
+    "id": 4,
+    "name": "Aye Aye",
+    "phone": "0945232353",
+    "batch": "SWD DEC Weekend",
+    "course": "PUD"
+  },
+  {
+    "name": "tun tun",
+    "phone": "095234234",
+    "batch": "SWD June Weekend",
+    "course": "SWD",
+    "id": 5
+  },
+  {
+    "name": "lin lin aung",
+    "phone": "09523423455",
+    "batch": "BUD Dec Weekend",
+    "course": "BUD",
+    "id": 6
+  }
+]

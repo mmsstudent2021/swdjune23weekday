@@ -7,28 +7,28 @@
       "fee": 50000
     },
     {
-      "id": 2,
-      "title": "Special Web Design",
-      "short_name": "SWD",
-      "fee": 300000
-    },
-    {
       "id": 3,
       "title": "Web App Development",
       "short_name": "WAD",
       "fee": 300000
     },
     {
-      "id": 4,
-      "title": "Basic UI Design",
-      "short_name": "BUD",
-      "fee": 50000
+      "title": "Figma Baisc",
+      "short_name": "FGB",
+      "fee": 100000,
+      "id": 4
     },
     {
       "id": 5,
-      "title": "Premium UI Design",
+      "title": "Figma Master",
       "short_name": "PUD",
-      "fee": 150000
+      "fee": 100000
+    },
+    {
+      "title": "Introduction to AI",
+      "short_name": "ITA",
+      "fee": 150000,
+      "id": 6
     }
   ],
   "batches": [
@@ -49,16 +49,20 @@
       "name": "SWD OCT Weekday"
     },
     {
-      "id": 5,
-      "name": "BUD Nov Weekday"
-    },
-    {
-      "id": 6,
-      "name": "BUD Nov Weekend"
+      "name": "my tesing",
+      "id": 6
     },
     {
       "id": 7,
       "name": "PUD Dec Weekday"
+    },
+    {
+      "name": "Workshop Dev 2023",
+      "id": 8
+    },
+    {
+      "name": "React Dev 2023",
+      "id": 9
     }
   ],
   "students": [
@@ -68,13 +72,6 @@
       "phone": "0923423521",
       "batch": "SWD June Weekday",
       "course": "SWD"
-    },
-    {
-      "id": 2,
-      "name": "Hla Hla",
-      "phone": "0962342344",
-      "batch": "SWD Nov Weekday",
-      "course": "BUD"
     },
     {
       "id": 3,
@@ -89,6 +86,20 @@
       "phone": "0945232353",
       "batch": "SWD DEC Weekend",
       "course": "PUD"
+    },
+    {
+      "name": "tun tun",
+      "phone": "095234234",
+      "batch": "SWD June Weekend",
+      "course": "SWD",
+      "id": 5
+    },
+    {
+      "name": "lin lin aung",
+      "phone": "09523423455",
+      "batch": "BUD Dec Weekend",
+      "course": "BUD",
+      "id": 6
     }
   ]
 }

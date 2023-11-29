@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "SWD June Weekday"
+  },
+  {
+    "id": 2,
+    "name": "SWD June Weekend"
+  },
+  {
+    "id": 3,
+    "name": "SWD Aug Weekday"
+  },
+  {
+    "id": 4,
+    "name": "SWD OCT Weekday"
+  },
+  {
+    "name": "my tesing",
+    "id": 6
+  },
+  {
+    "id": 7,
+    "name": "PUD Dec Weekday"
+  },
+  {
+    "name": "Workshop Dev 2023",
+    "id": 8
+  },
+  {
+    "name": "React Dev 2023",
+    "id": 9
+  }
+]
