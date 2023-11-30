@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
-import { rowRender, rowUi, toast, url } from "./functions";
+import { confirmBox, editRow, removeRow, rowRender, rowUi, toast, url } from "./functions";
 import { courseEditForm, courseForm, editDrawer, rowGroup } from "./selectors";
 
-export const courseFormHandler = (event) => {
+export const courseFormHandler = async (event) => {
   event.preventDefault();
 
   const formData = new FormData(courseForm);
@@ -19,68 +19,43 @@ export const courseFormHandler = (event) => {
   // disable form
   courseForm.querySelector("button").toggleAttribute("disabled");
 
-  fetch(url("/courses"), {
+  // fetch(url("/courses"), {
+  //   method: "POST",
+  //   headers: myHeader,
+  //   body: jsonData,
+  // })
+  //   .then((res) => res.json())
+  //   .then((json) => {
+  //     console.log(json);
+  //     courseForm.querySelector("button").toggleAttribute("disabled");
+
+  //     rowGroup.append(rowUi(json));
+  //     courseForm.reset();
+
+  //     toast("Course create successfully");
+  //   });
+
+  const res = await fetch(url("/courses"), {
     method: "POST",
     headers: myHeader,
     body: jsonData,
-  })
-    .then((res) => res.json())
-    .then((json) => {
-      console.log(json);
-      courseForm.querySelector("button").toggleAttribute("disabled");
+  });
 
-      rowGroup.append(rowUi(json));
-      courseForm.reset();
+  const json = await res.json();
 
-      toast("Course create successfully");
-    });
+  courseForm.querySelector("button").toggleAttribute("disabled");
+
+  rowGroup.append(rowUi(json));
+  courseForm.reset();
+
+  toast("Course create successfully");
 };
 
 export const rowGroupHandler = (event) => {
   if (event.target.classList.contains("row-del")) {
-    const currentRow = event.target.closest("tr");
-    const currentRowId = currentRow.getAttribute("course-id");
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        event.target.toggleAttribute("disabled");
-        fetch(url("/courses/" + currentRowId), { method: "DELETE" }).then(
-          (res) => {
-            event.target.toggleAttribute("disabled");
-
-            if (res.status === 204) {
-              toast("Course Deleted");
-              currentRow.remove();
-            }
-          }
-        );
-      }
-    });
+    removeRow(event.target.closest("tr").getAttribute("course-id"));
   } else if (event.target.classList.contains("row-edit")) {
-    const currentRow = event.target.closest("tr");
-    const currentRowId = currentRow.getAttribute("course-id");
-    // 1 old value retrieve
-    event.target.toggleAttribute("disabled");
-    fetch(url("/courses/" + currentRowId))
-      .then((res) => res.json())
-      .then((json) => {
-        // 2 show old value
-        event.target.toggleAttribute("disabled");
-        courseEditForm.querySelector("#edit_course_id").value = json.id;
-        courseEditForm.querySelector("#edit_course_title").value = json.title;
-        courseEditForm.querySelector("#edit_short_name").value =
-          json.short_name;
-        courseEditForm.querySelector("#edit_course_fee").value = json.fee;
-        editDrawer.show();
-        // 3 changes update
-      });
+    editRow(event.target.closest("tr").getAttribute("course-id"))
   }
 };
 
@@ -194,11 +169,11 @@ export const searchInputHandler = (event) => {
                 />
               </svg>
       `;
-      if(json.length){
+      if (json.length) {
         rowRender(json);
-      }else{
+      } else {
         toast("No course found");
-        rowGroup.innerHTML = `<tr><td colspan='5' class='px-6 py-4 text-center'>There is no course.<a href='http://${location.host}'>Browse all</a></td></tr>`
+        rowGroup.innerHTML = `<tr><td colspan='5' class='px-6 py-4 text-center'>There is no course.<a href='http://${location.host}'>Browse all</a></td></tr>`;
       }
     });
 };
