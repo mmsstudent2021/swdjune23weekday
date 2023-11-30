@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "flowbite": "^2.2.0",
+    "lodash": "^4.17.21",
     "sweetalert2": "^11.10.1"
   }
 }

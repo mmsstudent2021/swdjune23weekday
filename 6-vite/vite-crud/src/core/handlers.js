@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { rowUi, toast, url } from "./functions";
+import { rowRender, rowUi, toast, url } from "./functions";
 import { courseEditForm, courseForm, editDrawer, rowGroup } from "./selectors";
 
 export const courseFormHandler = (event) => {
@@ -117,6 +117,88 @@ export const courseEditFormHandler = (event) => {
       currentRow.querySelector(".row-title").innerText = json.title;
       currentRow.querySelector(".row-short").innerText = json.short_name;
       currentRow.querySelector(".row-fee").innerText = json.fee;
+    });
+};
 
+export const editCellHandler = (event) => {
+  if (event.target.classList.contains("cell-editable")) {
+    const currentRow = event.target.closest("tr");
+    const currentRowId = currentRow.getAttribute("course-id");
+    const currentCell = event.target;
+    const currentText = currentCell.innerText;
+    const currentCellColumnName = currentCell.getAttribute("cell-col");
+    currentCell.innerText = "";
+
+    const input = document.createElement("input");
+    input.value = currentText;
+    input.className =
+      "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500";
+    currentCell.append(input);
+    input.focus();
+
+    input.addEventListener("blur", () => {
+      const newValue = input.value;
+      currentCell.innerText = newValue;
+
+      const myHeader = new Headers();
+      myHeader.append("Content-Type", "application/json");
+
+      const updateData = {};
+      updateData[currentCellColumnName] = newValue;
+
+      const jsonData = JSON.stringify(updateData);
+
+      fetch(url("/courses/" + currentRowId), {
+        method: "PATCH",
+        headers: myHeader,
+        body: jsonData,
+      })
+        .then((res) => res.json())
+        .then((json) => toast("Update successfully"));
+    });
+  }
+};
+
+export const searchInputHandler = (event) => {
+  event.target.previousElementSibling.innerHTML = `<svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  class="w-4 h-4 animate-spin"
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+  />
+</svg>`;
+  fetch(url("/courses?title[like]=" + event.target.value))
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json);
+      event.target.previousElementSibling.innerHTML = `
+      <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+      `;
+      if(json.length){
+        rowRender(json);
+      }else{
+        toast("No course found");
+        rowGroup.innerHTML = `<tr><td colspan='5' class='px-6 py-4 text-center'>There is no course.<a href='http://${location.host}'>Browse all</a></td></tr>`
+      }
     });
 };
