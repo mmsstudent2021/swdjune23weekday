@@ -34,11 +34,11 @@ class Shop {
   // }
 
   async initialRender() {
-    const categoryRes = await fetch("http://localhost:3000/categories");
+    const categoryRes = await fetch("https://fakestoreapi.com/products/categories");
     const categoryJson = await categoryRes.json();
     categoryRender(categoryJson)
 
-    const productRes = await fetch("http://localhost:3000/products");
+    const productRes = await fetch("https://fakestoreapi.com/products");
     const productJson = await productRes.json();
     productRender(productJson)
   }
