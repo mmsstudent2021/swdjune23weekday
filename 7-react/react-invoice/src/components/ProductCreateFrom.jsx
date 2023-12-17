@@ -1,22 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 
-const ProductCreateFrom = ({ addProduct }) => {
-  const nameRef = useRef("");
-  const priceRef = useRef("");
-  const handleAddBtn = () => {
-    const newProduct = {
-      id: Date.now(),
-      name: nameRef.current.value,
-      price: priceRef.current.valueAsNumber,
-    };
-    addProduct(newProduct);
-    nameRef.current.value = "";
-    priceRef.current.value = "";
-    // console.log(nameRef.current.value, priceRef.current.valueAsNumber);
-  };
+const ProductCreateFrom = () => {
   return (
     <div className="border-t-2 p-3">
-      <div id="newProductForm">
+      <form id="newProductForm" action>
         <div className="grid grid-cols-3 gap-3">
           <div className="col-span-3">
             <label
@@ -26,7 +13,6 @@ const ProductCreateFrom = ({ addProduct }) => {
               New Product Name
             </label>
             <input
-              ref={nameRef}
               type="text"
               id="newProductName"
               name="new_product_name"
@@ -42,7 +28,6 @@ const ProductCreateFrom = ({ addProduct }) => {
               Product Price
             </label>
             <input
-              ref={priceRef}
               type="number"
               id="newProductPrice"
               name="new_product_price"
@@ -52,7 +37,6 @@ const ProductCreateFrom = ({ addProduct }) => {
           </div>
           <div className="col-span-1">
             <button
-              onClick={handleAddBtn}
               type="submit"
               className="w-full h-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             >
@@ -60,7 +44,7 @@ const ProductCreateFrom = ({ addProduct }) => {
             </button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
