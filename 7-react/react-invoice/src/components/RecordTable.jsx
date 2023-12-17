@@ -2,7 +2,7 @@ import React from "react";
 import EmptyStage from "./EmptyStage";
 import RecordGroup from "./RecordGroup";
 
-const RecordTable = () => {
+const RecordTable = ({ records, updateRecordQuantity,removeRecord }) => {
   return (
     <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
@@ -25,8 +25,11 @@ const RecordTable = () => {
         </tr>
       </thead>
       <tbody id="recordGroup">
-        <RecordGroup />
-        
+        <RecordGroup
+          updateRecordQuantity={updateRecordQuantity}
+          records={records}
+          removeRecord={removeRecord}
+        />
       </tbody>
       <tfoot>
         <tr className="border-b">
@@ -34,7 +37,7 @@ const RecordTable = () => {
             Total
           </td>
           <td className="px-6 py-4 text-end" id="recordTotal">
-            2500
+            {records.reduce((pv, cv) => pv + cv.cost, 0).toFixed(2)}
           </td>
         </tr>
       </tfoot>
