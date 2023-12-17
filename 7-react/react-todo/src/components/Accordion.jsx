@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-const Accordion = ({ question, answer }) => {
-  const [open, setOpen] = useState(false);
+const Accordion = ({ id, openAccordion, question, answer, isOpen }) => {
+  // const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(!open);
-  };
+  // const handleOpen = () => {
+  //   setOpen(!open);
+  // };
 
   return (
     <div className=" border border-gray-400">
       <div
-        onClick={handleOpen}
+        onClick={() => openAccordion(id)}
         className=" bg-gray-200 p-3 flex justify-between select-none cursor-pointer"
       >
         <h4>{question}</h4>
@@ -29,7 +29,7 @@ const Accordion = ({ question, answer }) => {
           />
         </svg>
       </div>
-      {open && (
+      {isOpen && (
         <div className={`p-4 animate__animated animate__fadeIn`}>
           <p>{answer}</p>
         </div>
