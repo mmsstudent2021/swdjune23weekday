@@ -1,16 +1,24 @@
 import React from "react";
 
-const Record = () => {
+const Record = ({
+  record: { id, name, price, quantity, cost },
+  index,
+  removeRecord,
+}) => {
+  const handleRemoveBtn = () => {
+    console.log(id);
+    removeRecord(id);
+  };
   return (
     <tr className="group odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-      <td className="px-6 py-4 td-counter" />
+      <td className="px-6 py-4 td-counter">{index + 1}</td>
       <th
         scope="row"
         className="record-name px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
       >
-        Apple
+        {name}
       </th>
-      <td className="px-6 py-4 text-end record-price">500</td>
+      <td className="px-6 py-4 text-end record-price">{price}</td>
       <td className="px-6 py-4 text-end">
         <button className="q-sub pointer-events-none group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 -translate-x-6 group-hover:translate-x-0 duration-200 bg-blue-100 text-blue-600 p-1 rounded">
           <svg
@@ -28,7 +36,7 @@ const Record = () => {
             />
           </svg>
         </button>
-        <span className="record-q w-5 inline-block">5</span>
+        <span className="record-q w-5 inline-block">{quantity}</span>
         <button className="q-add pointer-events-none group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 translate-x-6 group-hover:translate-x-0 duration-200 bg-blue-100 text-blue-600 p-1 rounded">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,8 +55,11 @@ const Record = () => {
         </button>
       </td>
       <td className="px-6 py-4 text-end relative">
-        <span className="record-cost">2500</span>
-        <button className="record-del group-hover:opacity-100 group-hover:pointer-events-auto duration-200 group-hover:left-3/4 absolute pointer-events-none opacity-0 left-full top-3 translate-x-2 active:scale-75 bg-blue-100 p-2 rounded-lg">
+        <span className="record-cost">{cost.toFixed(2)}</span>
+        <button
+          onClick={handleRemoveBtn}
+          className="record-del group-hover:opacity-100 group-hover:pointer-events-auto duration-200 group-hover:left-3/4 absolute pointer-events-none opacity-0 left-full top-3 translate-x-2 active:scale-75 bg-blue-100 p-2 rounded-lg"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
