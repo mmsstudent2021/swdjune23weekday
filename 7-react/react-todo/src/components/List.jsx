@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EditInput from "./EditInput";
 
 const List = ({ id, job, isDone, deleteTask, doneTask, updateTaskJob }) => {
   const [edit, setEdit] = useState(false);
@@ -31,15 +32,11 @@ const List = ({ id, job, isDone, deleteTask, doneTask, updateTaskJob }) => {
     <div className="list">
       <div className="group  border mb-3 overflow-hidden border-neutral-700 p-5 flex justify-between items-center">
         {edit ? (
-          <div className="">
-            <input
-              value={updateInput}
-              type="text"
-              className={` border border-gray-400 text-sm py-1 w-[280px] px-2`}
-              onChange={handleUpdateInput}
-              onBlur={handleUpdateInputBlur}
-            />
-          </div>
+          <EditInput
+          updateInput={updateInput}
+          handleUpdateInput={handleUpdateInput}
+          handleUpdateInputBlur={handleUpdateInputBlur}
+        />
         ) : (
           <div className="content flex items-center gap-3">
             <input
