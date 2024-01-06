@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import { basedUrl } from "./configs";
-import { rowGroup, rowTemplate } from "./selectors";
+import { editDrawer, rowGroup, rowTemplate } from "./selectors";
 
 export const rowUi = ({ id, title, short_name, fee }) => {
   const row = rowTemplate.content.cloneNode(true);

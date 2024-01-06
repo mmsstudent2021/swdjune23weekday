@@ -1,1 +1,13 @@
-[{"title":"Basic UI Design","short_name":"SWD","fee":"234","id":23},{"title":"Premium UI Design","short_name":"SWD","fee":"123","id":24},{"title":"Premium UI Design","short_name":"SWD","fee":"123","id":25},{"title":"My Web Design","short_name":"SWD","fee":"123","id":26},{"title":"Web Application Development","short_name":"WAD","fee":"213","id":27},{"title":"aync san tar","short_name":"aat","fee":"4000","id":28}]
+[
+  { "title": "Basic UI Design", "short_name": "SWD", "fee": "234", "id": 23 },
+  { "title": "Premium UI Design", "short_name": "SWD", "fee": "123", "id": 24 },
+  { "title": "Premium UI Design", "short_name": "SWD", "fee": "123", "id": 25 },
+  { "title": "My Web Design", "short_name": "SWD", "fee": "123", "id": 26 },
+  {
+    "title": "Web Application Development",
+    "short_name": "WAD",
+    "fee": "213",
+    "id": 27
+  },
+  { "title": "aync san tar", "short_name": "aat", "fee": "4000", "id": 28 }
+]
