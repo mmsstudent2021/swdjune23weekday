@@ -9,14 +9,21 @@ const DataContextProvider = ({ children }) => {
 
   const [editCourse,setEditCourse] = useState({})
 
-  console.log(editCourse);
-
   const addCourse = (newCourse) => {
     setCourses([...courses,newCourse])
   }
 
   const deleteCourse = (id) => {
     setCourses(courses.filter(course => course.id != id))
+  }
+
+  const updateCourse = (newCourse) => {
+    setCourses(courses.map(course => {
+        if(course.id === newCourse.id){
+            return newCourse;
+        }
+        return course;
+    }))
   }
 
   const toggleCreateDrawer = () => {
@@ -39,7 +46,8 @@ const DataContextProvider = ({ children }) => {
         addCourse,
         deleteCourse,
         editCourse,
-        setEditCourse
+        setEditCourse,
+        updateCourse
       }}
     >
       {children}

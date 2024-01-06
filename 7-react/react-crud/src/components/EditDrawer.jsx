@@ -2,22 +2,55 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { DataContext } from "../contexts/DataContext";
 
 const EditDrawer = () => {
-  const { editDrawer, toggleEditDrawer, editCourse } = useContext(DataContext);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [course, setCourse] = useState(editCourse);
-  console.log("edit course ",course);
+  const {
+    editDrawer,
+    toggleEditDrawer,
+    editCourse: { id, title, short_name, fee },
+    updateCourse,
+  } = useContext(DataContext);
 
-  //   const titleRef = useRef();
-  //   const shortRef = useRef();
-  //   const feeRef = useRef();
+  const titleRef = useRef();
+  const shortRef = useRef();
+  const feeRef = useRef();
+  const idRef = useRef();
+  const closeRef = useRef();
 
-  //   const [inputTitle, setInputTitle] = useState(title);
-  //   const [inputShort, setInputShort] = useState(short_name);
-  //   const [inputFee, setInputFee] = useState(fee);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const newCourse = {
+      title: titleRef.current.value,
+      short_name: shortRef.current.value,
+      fee: feeRef.current.valueAsNumber,
+    };
+
+    setIsLoading(true);
+    const res = await fetch("http://localhost:5174/api/courses/" + id, {
+      method: "PUT",
+      headers: new Headers({ "Content-Type": "application/json" }),
+      body: JSON.stringify(newCourse),
+    });
+
+    const json = await res.json();
+
+    updateCourse(json);
+
+    setIsLoading(false);
+
+    if (closeRef.current.checked) {
+      toggleEditDrawer();
+    }
+  };
 
   useEffect(() => {
     console.log("edit drawer work");
-  }, [course]);
+
+    titleRef.current.value = title;
+    shortRef.current.value = short_name;
+    feeRef.current.value = fee;
+    idRef.current.value = id;
+  }, []);
 
   return (
     <div
@@ -70,8 +103,13 @@ const EditDrawer = () => {
         <span className="sr-only">Close menu</span>
       </button>
       {/* edit form */}
-      <div id="courseEditForm">
-        {/* <input type="hidden" name="edit_course_id" id="edit_course_id" /> */}
+      <form onSubmit={handleSubmit} id="courseEditForm">
+        <input
+          type="hidden"
+          name="edit_course_id"
+          id="edit_course_id"
+          ref={idRef}
+        />
         <div className="mb-5">
           <label
             htmlFor="edit_course_title"
@@ -81,6 +119,8 @@ const EditDrawer = () => {
           </label>
           <input
             type="text"
+            ref={titleRef}
+            disabled={isLoading}
             id="edit_course_title"
             name="edit_course_title"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -97,6 +137,8 @@ const EditDrawer = () => {
           </label>
           <input
             type="text"
+            ref={shortRef}
+            disabled={isLoading}
             id="edit_short_name"
             name="edit_short_name"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -113,6 +155,8 @@ const EditDrawer = () => {
           </label>
           <input
             type="number"
+            ref={feeRef}
+            disabled={isLoading}
             id="edit_course_fee"
             name="edit_course_fee"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -122,21 +166,22 @@ const EditDrawer = () => {
         </div>
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            {/* <input
+            <input
               id="edit-default-checkbox"
               type="checkbox"
+              ref={closeRef}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              required
-            /> */}
+            />
             <label
               htmlFor="edit-default-checkbox"
               className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
-              Double checked
+              Close after updated
             </label>
           </div>
           <button
             type="submit"
+            disabled={isLoading}
             className="group text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:opacity-70"
           >
             <span className="inline group-disabled:hidden">Update</span>
@@ -159,7 +204,7 @@ const EditDrawer = () => {
             </span>
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
