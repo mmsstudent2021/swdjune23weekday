@@ -4,5 +4,5 @@ import jsonServer from 'vite-plugin-simple-json-server';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),jsonServer({delay:3000})],
+  plugins: [react(),jsonServer({delay:1000})],
 })

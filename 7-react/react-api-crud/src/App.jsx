@@ -1,29 +1,20 @@
-import React, { useEffect, useState } from "react";
-import Counter from "./components/Counter";
-import HideShow from "./components/HideShow";
-import ListGroup from "./components/ListGroup";
+import React, { useContext } from "react";
+import Header from "./components/Header";
+import Container from "./components/Container";
+import CourseTable from "./components/CourseTable";
+import CreateDrawer from "./components/CreateDrawer";
+import EditDrawer from "./components/EditDrawer";
+import { DataContext } from "./contexts/DataContext";
 
 const App = () => {
-  const [courses, setCourses] = useState([]);
-
-  useEffect(() => {
-    // fetch("http://localhost:5173/api/courses")
-    //   .then((res) => res.json())
-    //   .then((json) => setCourses(json));
-
-    fetchCourse();
-  }, []);
-
-  const fetchCourse = async () => {
-    const res = await fetch("http://localhost:5173/api/courses");
-    const json = await res.json();
-    setCourses(json);
-  };
-
+  const {editDrawer} = useContext(DataContext)
   return (
-    <div>
-      <ListGroup courses={courses} />
-    </div>
+    <Container>
+      <Header />
+      <CourseTable />
+      <CreateDrawer />
+      {editDrawer && <EditDrawer />}
+    </Container>
   );
 };
 

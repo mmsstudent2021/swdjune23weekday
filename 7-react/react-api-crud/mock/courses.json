@@ -1,16 +1,1 @@
-[
-    {
-        "id":1,
-        "title":"Web Dev Foundation",
-        "fee" : 50000,
-        "status" : true,
-        "student_count":15
-    },
-    {
-        "id":2,
-        "title":"Special Web Design",
-        "fee" : 300000,
-        "status" : true,
-        "student_count":9
-    }
-]
+[{"title":"BBB","short_name":"BBB","fee":123,"id":1},{"title":"PPP","short_name":"PPP","fee":111,"id":2},{"title":"Special Web Design","short_name":"SWD","fee":300000,"id":3}]
