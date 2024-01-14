@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^5.3.3"
+  }
+}
