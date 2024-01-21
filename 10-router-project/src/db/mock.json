@@ -1,0 +1,79 @@
+{
+  "book": [
+    {
+      "id": "1",
+      "book": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "slug": "catcher-in-the-rye",
+      "description": "A classic novel about the experiences of a teenager named Holden Caulfield in New York City."
+    },
+    {
+      "id": "2",
+      "book": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "slug": "to-kill-a-mockingbird",
+      "description": "A powerful story of racial injustice and moral growth in the American South during the 1930s."
+    },
+    {
+      "id": "3",
+      "book": "1984",
+      "author": "George Orwell",
+      "slug": "1984",
+      "description": "A dystopian novel that explores the consequences of government overreach and surveillance."
+    },
+    {
+      "id": "4",
+      "book": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "slug": "the-great-gatsby",
+      "description": "An exploration of the American Dream and the decadence of the Roaring Twenties."
+    },
+    {
+      "id": "5",
+      "book": "Harry Potter and the Philosopher's Stone",
+      "author": "J.K. Rowling",
+      "slug": "harry-potter",
+      "description": "The first book in the popular Harry Potter series, introducing the world of magic and wizardry."
+    },
+    {
+      "id": "6",
+      "book": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "slug": "the-hobbit",
+      "description": "An adventure novel that follows the journey of Bilbo Baggins as he helps a group of dwarves reclaim their homeland."
+    },
+    {
+      "id": "7",
+      "book": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "slug": "pride-and-prejudice",
+      "description": "A classic romance novel exploring societal expectations, love, and misunderstandings in 19th-century England."
+    },
+    {
+      "id": "8",
+      "book": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "slug": "the-lord-of-the-rings",
+      "description": "An epic fantasy trilogy that follows the quest to destroy the One Ring and defeat the Dark Lord Sauron."
+    },
+    {
+      "id": "9",
+      "book": "The Hunger Games",
+      "author": "Suzanne Collins",
+      "slug": "the-hunger-games",
+      "description": "A dystopian novel set in a post-apocalyptic world where teenagers are chosen to participate in a televised fight to the death."
+    },
+    {
+      "id": "10",
+      "book": "Frankenstein",
+      "author": "Mary Shelley",
+      "slug": "frankenstein",
+      "description": "A gothic science fiction novel exploring the consequences of playing god and creating life."
+    }
+  ],
+  "author": [
+    { "id": "1", "name": "Terry" },
+    { "id": "1", "name": "Terry" },
+    { "id": "1", "name": "Terry" }
+  ]
+}
