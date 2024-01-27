@@ -1,7 +1,6 @@
 import React from "react";
 
 const BookListComponents = ({ data }) => {
-  console.log(data);
   return (
     <div className="w-[200px] h-[300px] border my-5">
       <div>

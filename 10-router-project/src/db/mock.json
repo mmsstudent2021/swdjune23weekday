@@ -75,5 +75,19 @@
     { "id": "1", "name": "Terry" },
     { "id": "1", "name": "Terry" },
     { "id": "1", "name": "Terry" }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "username": "Terry",
+      "email": "shinthantmin32@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "username": "Shinn Thant Minn",
+      "email": "shinnthantmindev.mm@gmail.com",
+      "password": "789123"
+    }
   ]
 }
