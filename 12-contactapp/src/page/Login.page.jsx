@@ -4,8 +4,11 @@ import {
   FormComponents,
   ButtonComponents,
 } from "../components";
+import { useNavigate } from "react-router-dom";
+import { Register } from "../service/auth.service";
 
 const LoginPage = () => {
+  const nav = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleInputChange = (e) =>
@@ -44,6 +47,15 @@ const LoginPage = () => {
               Login
             </ButtonComponents>
           </form>
+          <p className="mt-5">
+            You haven't account pls Register{" "}
+            <button
+              className="text-blue-400 underline"
+              onClick={() => nav("/register")}
+            >
+              Register
+            </button>
+          </p>
         </div>
       </div>
     </ContainerComponents>
