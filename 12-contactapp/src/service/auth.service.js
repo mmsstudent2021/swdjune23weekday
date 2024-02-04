@@ -8,3 +8,17 @@ export const Register = async (data) => {
     return { error: true, msg: e.message };
   }
 };
+
+export const Login = async (formData) => {
+  try {
+    const res = await api.post("/login", formData);
+    const { data } = res;
+
+    if (data.token) {
+      localStorage.setItem("auth", JSON.stringify(data.token));
+    }
+    return res;
+  } catch (e) {
+    return { error: true, msg: e.message };
+  }
+};
