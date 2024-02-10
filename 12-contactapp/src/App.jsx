@@ -1,5 +1,11 @@
 import React from "react";
-import { HomePage, LoginPage, RegisterPage } from "./page";
+import {
+  HomePage,
+  LoginPage,
+  RegisterPage,
+  ContactAddPage,
+  ContactPage,
+} from "./page";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -8,7 +14,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/Home" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />}>
+          <Route index element={<ContactPage />} />
+          <Route path="add" element={<ContactAddPage />} />
+        </Route>
       </Routes>
     </main>
   );
