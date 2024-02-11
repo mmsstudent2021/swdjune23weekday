@@ -4,6 +4,7 @@ import {
   LoginPage,
   RegisterPage,
   ContactAddPage,
+  DetailContact,
   ContactPage,
 } from "./page";
 import { Route, Routes } from "react-router-dom";
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/home" element={<HomePage />}>
           <Route index element={<ContactPage />} />
           <Route path="add" element={<ContactAddPage />} />
+          <Route path="contact/:id" element={<DetailContact />} />
         </Route>
       </Routes>
     </main>

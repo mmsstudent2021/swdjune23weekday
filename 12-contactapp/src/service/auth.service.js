@@ -22,3 +22,12 @@ export const Login = async (formData) => {
     return { error: true, msg: e.message };
   }
 };
+
+export const getProfile = async () => {
+  try {
+    const res = await api.get("/user-profile");
+    return res;
+  } catch (e) {
+    return { error: true, msg: e.message };
+  }
+};

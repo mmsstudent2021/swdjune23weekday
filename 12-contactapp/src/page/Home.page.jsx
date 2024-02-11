@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PreventComponents } from "../components";
 import { Outlet, useNavigate } from "react-router-dom";
+import { getProfile } from "../service/auth.service";
 
 const HomePage = () => {
   const nav = useNavigate();
@@ -8,6 +9,12 @@ const HomePage = () => {
     localStorage.removeItem("auth");
     nav("/");
   };
+
+  useEffect(() => {
+    (async () => {
+      const res = await getProfile();
+    })();
+  }, []);
 
   const handleAdd = () => nav("/home/add");
   return (
