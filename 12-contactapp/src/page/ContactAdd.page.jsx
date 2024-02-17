@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ButtonComponents, FormComponents } from "../components";
-import { addNewContact } from "../service/contact.service";
-import { useNavigate } from "react-router-dom";
+import { addNewContact, editContact } from "../service/contact.service";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const ContactAddPage = () => {
   const nav = useNavigate();
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -12,13 +13,24 @@ const ContactAddPage = () => {
     address: "",
   });
 
+  useEffect(() => {
+    if (location.state?.edit) {
+      const { email, address, name, phone } = location.state.data;
+      setFormData({ name, email, phone, address });
+    }
+  }, [location]);
+
   const handleFormDataChange = (e) =>
     setFormData((pre) => ({ ...pre, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await addNewContact(formData);
-    console.log(res);
+    let res;
+    if (location.state?.edit) {
+      res = await editContact(location.state.id, formData);
+    } else {
+      res = await addNewContact(formData);
+    }
     if (res) {
       nav("/home");
     }
@@ -59,7 +71,9 @@ const ContactAddPage = () => {
             type="text"
             name="address"
           />
-          <ButtonComponents type="submit">Create Contact</ButtonComponents>
+          <ButtonComponents type="submit">
+            {location.state?.edit ? "Edit Contact" : "Create Contact"}
+          </ButtonComponents>
         </form>
       </div>
     </div>

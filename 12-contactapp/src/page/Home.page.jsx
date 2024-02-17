@@ -21,7 +21,7 @@ const HomePage = () => {
     <PreventComponents fail={"/"} check={!localStorage.getItem("auth")}>
       <div className="container mx-auto h-screen">
         <div className="w-[80%] mx-auto h-full">
-          <nav className="flex justify-between px-2 py-3 shadow">
+          <nav className="flex sticky top-0 justify-between px-2 py-3 shadow">
             <h1>Contact App</h1>
             <div className="space-x-5">
               <button onClick={handleAdd} className="">
